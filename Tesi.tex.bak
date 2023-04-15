@@ -1,7 +1,8 @@
 \documentclass[12pt]{article}
 
 \usepackage{graphicx}
-
+\renewcommand\refname{Bibliografia} 
+	
 \begin{document}
 
 
@@ -16,7 +17,7 @@
     \vspace{0.4cm}
     \textsc{\large Corso di Laurea in}\\
     \textsc{\large Ingegneria Aerospaziale}\\
-    \vspace{1cm}
+    \vspace{1.2cm}
     \textsc{\large Tesi di Laurea}\\
     \vfill
     % Title
@@ -31,5 +32,23 @@
     {\large Anno Accademico 2022/2023}
   \end{center}
 \end{titlepage}
+
+\section*{Introduzione}
+Nell'ambito del progetto LiftUp del Dipartimento di Ingegneria Industriale, per la partecipazione all'Air Cargo Challenge 2022, è stato progettato e costruito un velivolo a controllo remoto, candidato poi dal nostro team alla competizione.
+Tutto il processo di progettazione e realizzazione del drone, di seguito denominato UAS (Unmanned Aerial System), secondo la nomenclatura adottata dal legislatore europeo, si è basato sul regolamento di gara, e in particolare sui requisiti di sistema e sui criteri di attribuzione del punteggio. Di tali criteri, la porzione più rilevante è stata dedicata dalla giuria alle prestazioni in volo dell'aeromobile. Ne è nata la necessità di integrare un sistema di registrazione e trasmissione dei dati di volo dei sensori, al fine di valutare le prestazioni durante il collaudo, individuare le migliori condizioni di manovra e prevedere i punteggi conseguenti alle singole esercitazioni di preparazione svolte nei mesi precedenti alla gara.
+
+\subsection*{Criteri di attribuzione del punteggio di volo}
+I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento\cite{regulation}, sono stati:
+\begin{itemize}
+\item \textbf{Payload} trasportato durante il volo, misurato in termini di massa.
+\item \textbf{Distanza} coperta durante i primi 120 secondi del tempo di volo.
+\item \textbf{Altitudine} raggiunta a 60 secondi del tempo di volo.
+\end{itemize}
+Dove l'inizio della misura del tempo di volo è stato definito in corrispondenza del raggiungimento di 5 km/h di velocità rispetto al suolo (misurata dal modulo GPS), durante la fase di decollo.
+
+\newpage
+\bibliography{refs}
+\bibliographystyle{plain}
+
 
 \end{document}
