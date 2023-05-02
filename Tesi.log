@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2023.3.28)  14 APR 2023 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2023.3.28)  2 MAY 2023 14:46
 entering extended mode
 **./Tesi.tex
 (Tesi.tex
@@ -45,81 +45,99 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
+("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count175
+\float@exts=\toks16
+\float@box=\box45
+\@float@everytoks=\toks17
+\@floatcapt=\box46
+)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/l3backend\l3backend-pdfmode.def"
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count175
-\l__pdf_internal_box=\box45
+\l__kernel_color_stack_int=\count176
+\l__pdf_internal_box=\box47
 )
 (Tesi.aux)
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
  ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count176
+\scratchcounter=\count177
 \scratchdimen=\dimen137
-\scratchbox=\box46
-\nofMPsegments=\count177
-\nofMParguments=\count178
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count179
+\scratchbox=\box48
+\nofMPsegments=\count178
+\nofMParguments=\count179
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count180
 \MPscratchDim=\dimen138
-\MPnumerator=\count180
-\makeMPintoPDFobject=\count181
-\everyMPtoPDFconversion=\toks17
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
+\everyMPtoPDFconversion=\toks19
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-<images/logo-unipd.png, id=1, 803.0pt x 803.0pt>
-File: images/logo-unipd.png Graphic file (type png)
-<use images/logo-unipd.png>
-Package pdftex.def Info: images/logo-unipd.png  used on input line 11.
+<img/logo-unipd.png, id=1, 803.0pt x 803.0pt>
+File: img/logo-unipd.png Graphic file (type png)
+<use img/logo-unipd.png>
+Package pdftex.def Info: img/logo-unipd.png  used on input line 12.
 (pdftex.def)             Requested size: 80.3047pt x 80.3047pt.
 
 [1
 
-{C:/Users/Emanuele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images
-/logo-unipd.png>]
+{C:/Users/Emanuele/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/lo
+go-unipd.png>] [1]
+<img/Schema-v1.png, id=15, 2618.78375pt x 796.9775pt>
+File: img/Schema-v1.png Graphic file (type png)
+<use img/Schema-v1.png>
+Package pdftex.def Info: img/Schema-v1.png  used on input line 49.
+(pdftex.def)             Requested size: 398.33858pt x 121.21967pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 49--50
+ [][] 
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 41.
+(Font)              <12> on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 41.
+(Font)              <8> on input line 53.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 41.
- [1] (Tesi.bbl) [2] (Tesi.aux) ) 
+(Font)              <6> on input line 53.
+[2 <./img/Schema-v1.png>] (Tesi.bbl) [3] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 1179 strings out of 480930
- 17196 string characters out of 2909538
- 252872 words of memory out of 3000000
- 17082 multiletter control sequences out of 15000+200000
+ 1247 strings out of 480930
+ 18096 string characters out of 2909538
+ 255019 words of memory out of 3000000
+ 17145 multiletter control sequences out of 15000+200000
  539132 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,5n,25p,764b,175s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Emanuele\AppData\Local\MiKTeX\2.9\fo
-nts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.p
-fb>
-Output written on Tesi.pdf (3 pages, 294383 bytes).
+ 30i,5n,25p,867b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Emanuele\AppDat
+a\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmti12.pfb>
+Output written on Tesi.pdf (4 pages, 720243 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 45 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
