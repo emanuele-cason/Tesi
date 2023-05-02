@@ -36,27 +36,30 @@
 
 \section*{Introduzione}
 Nell'ambito del progetto LiftUp del Dipartimento di Ingegneria Industriale, per la partecipazione all'Air Cargo Challenge 2022, è stato progettato e costruito un velivolo a controllo remoto, candidato poi dal nostro team alla competizione.
-Tutto il processo di progettazione e realizzazione del drone, di seguito denominato UAS (Unmanned Aerial System), secondo la nomenclatura adottata dal legislatore europeo, si è basato sul regolamento di gara, e in particolare sui requisiti di sistema e sui criteri di attribuzione del punteggio. Di tali criteri, la porzione più rilevante è stata dedicata dalla giuria alle prestazioni in volo dell'aeromobile. Ne è nata la necessità di integrare un sistema di registrazione e trasmissione dei dati di volo dei sensori, al fine di valutare le prestazioni durante il collaudo, individuare le migliori condizioni di manovra e prevedere i punteggi conseguenti alle singole esercitazioni di preparazione svolte nei mesi precedenti alla gara.
+Tutto il processo di progettazione e realizzazione del drone, di seguito denominato UAS (Unmanned Aerial System), secondo la nomenclatura adottata dal legislatore europeo, si è basato sul regolamento di gara, e in particolare sui requisiti di sistema e sui criteri di attribuzione del punteggio. Di tali criteri, la porzione più rilevante è stata dedicata dalla giuria alle prestazioni in volo dell'aeromobile. 
+\\\\
+Ne è nata la necessità di disporre di un sistema di registrazione e trasmissione dei dati di volo dei sensori, con molteplici importanti finalità, tra cui: 
 
-\section*{Sistema di telemetria - versione 1}
-La scelta di implementare una prima versione di sistema di telemetria è stata conseguente alla necessità immediata di ottenere i dati fondamentali già dalle prime uscite in campo di volo. Si è quindi selezionato un modulo di logging dei dati (SM-Modellbau GPS-Logger 3), integrante un ricevitore GNSS (Global Navigation Satellite System), accelerometro a tre assi e barometro, con registrazione su scheda microSD. La scelta del componente è derivata da vari fattori considerati: i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento, la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), e non ultimo il costo non eccessivamente alto.
-
-\subsection*{Implementazione del modulo}
-Da un punto di vista di compatibilità con i sistemi elettrici del velivolo il modulo utilizzato, permette di essere alimentato con tensioni all'interno del range tra 3.6 V e 8.5 V, direttamente  dispone di un ingresso PWM per leggere il segnale di un canale del modulo ricevente ed è compatibile con il protocollo Smart Port che utilizza il radiocomando, permettendo di trasmettere a quest'ultimo i dati di telemetria, che a seguito della programmazione necessaria li rende visibili nel suo display in tempo reale. Per minimizzare l'effetto radio schermante della fibra di carbonio di cui è largamente composto il velivolo, si è posizionato il ricevitore in un'apposita baia, nella zona superiore della fusoliera. Di conseguenza, il modulo è stato implementato secondo lo schema seguente:
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=14cm]{img/Schema-v1}
-\end{figure}
-
-\subsection*{Criteri di attribuzione del punteggio di volo}
-I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento \textsuperscript{\cite{regulation}}, sono stati:
 \begin{itemize}
-\item \textbf{Payload} trasportato durante il volo, misurato in termini di massa.
-\item \textbf{Altitudine} raggiunta a 60 secondi del tempo di volo.
-\item \textbf{Distanza} coperta durante i primi 180 secondi del tempo di volo.
+\item Valutare le prestazioni durante il collaudo.
+\item Individuare le migliori condizioni di manovra.
+\item Prevedere i punteggi conseguenti alle singole esercitazioni di preparazione svolte nei mesi precedenti alla gara.
+\item Verificare l'accettabilità delle approssimazioni, delle relazioni analitiche e dei processi iterativi adottati durante i processi di dimensionamento e design preliminare del velivolo.
 \end{itemize}
-Dove l'inizio della misura del tempo di volo è stato definito in corrispondenza del raggiungimento di 5 km/h di velocità rispetto al suolo (misurata dal modulo GPS), durante la fase di decollo.
+
+\noindent
+A seguito di varie valutazioni sulla possibilità di acquistare sistemi di telemetria già pronti all'uso, si è optato per progettare, sviluppare e integrare un modulo specifico da zero, al fine di avere maggiore controllo sulle sue caratteristiche, migliore comprensione del funzionamento e maggiore possibilità di intervento (ad esempio reiterandone il design per ridurne la massa, ottimizzando la trasmissione e la visualizzazione dei dati, \textit{eccetera}) in base alle necessità emergenti, anche nell'ottica di disporre di un sistema comodo da implementare nei velivoli che verranno sviluppati in futuro.
+\\\\
+Anche in termini di costi tale scelta risulta molto vantaggiosa: un sistema pre-fabbricato infatti richiede l'acquisto di sensori e componenti aggiuntivi compatibili, spesso limitando la scelta ad un marchio unico e con protocolli non open-source. Al contrario, nel sistema progettato è stato possibile considerare un trade-off per ogni componente e sensore, scegliendo quello più conveniente in termini di prezzo e prestazioni, anche affidandosi a produttori diversi. 
+
+\section*{Struttura del sistema di telemetria}
+In linea generale, il sistema è stato articolato in due nodi. Uno installato a bordo del velivolo e l'altro complementare, parte di una stazione di terra.
+
+\subsection*{Modulo lato velivolo}
+Il modulo a bordo del velivolo è stato progettato con un architettura centralizzata. Il microcontrollore, nello specifico Arduino Nano, interroga i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti.
+
+
+%La scelta di implementare una prima versione di sistema di telemetria è stata conseguente alla necessità immediata di ottenere i dati fondamentali già dalle prime uscite in campo di volo. Si è quindi selezionato un modulo di logging dei dati (SM-Modellbau GPS-Logger 3), integrante un ricevitore GNSS (Global Navigation Satellite System), accelerometro a tre assi e barometro, con registrazione su scheda microSD. La scelta del componente è derivata da vari fattori considerati: i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento, la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), e non ultimo il costo non eccessivamente alto.
 
 \newpage
 \bibliography{refs}
