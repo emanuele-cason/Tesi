@@ -49,7 +49,7 @@ Ne è nata la necessità di disporre di un sistema di registrazione e trasmissio
 \end{itemize}
 
 \noindent
-A seguito di varie valutazioni sulla possibilità di acquistare sistemi di telemetria già pronti all'uso, si è optato per progettare, sviluppare e integrare un modulo specifico da zero, al fine di avere maggiore controllo sulle sue caratteristiche, migliore comprensione del funzionamento e maggiore possibilità di intervento (ad esempio reiterandone il design per ridurne la massa, ottimizzando la trasmissione e la visualizzazione dei dati, \textit{eccetera}) in base alle necessità emergenti, anche nell'ottica di disporre di un sistema comodo da implementare nei velivoli che verranno sviluppati in futuro.
+A seguito di varie valutazioni sulla possibilità di acquistare sistemi di telemetria già pronti all'uso, si è optato per progettare, sviluppare e integrare un modulo specifico da zero, al fine di avere maggiore controllo sulle caratteristiche, migliore consapevolezza del suo funzionamento e maggiore margine di intervento (ad esempio reiterandone il design per ridurne la massa, ottimizzando la trasmissione e la visualizzazione dei dati, \textit{eccetera}) in base alle necessità emergenti, anche nell'ottica di disporre di un sistema comodo da implementare nei velivoli che verranno sviluppati in futuro.
 \\\\
 Anche in termini di costi tale scelta risulta molto vantaggiosa: un sistema pre-fabbricato infatti richiede l'acquisto di sensori e componenti aggiuntivi compatibili, spesso limitando la scelta ad un marchio unico e con protocolli non open-source. Al contrario, nel sistema progettato è stato possibile considerare un trade-off per ogni componente e sensore, scegliendo quello più conveniente in termini di prezzo e prestazioni, anche affidandosi a produttori diversi. 
 
@@ -57,12 +57,14 @@ Anche in termini di costi tale scelta risulta molto vantaggiosa: un sistema pre-
 In linea generale, il sistema è stato articolato in due nodi. Uno installato a bordo del velivolo e l'altro complementare, parte di una stazione di terra.
 
 \subsection*{Modulo lato velivolo}
-Il modulo a bordo del velivolo è stato progettato con un architettura centralizzata. Il microcontrollore, nello specifico Arduino Nano, interroga i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti. Il sistema dunque assume l'architettura seguente:
+Il modulo a bordo del velivolo è stato progettato con un architettura centralizzata, programmato con un firmware appositamente creato. Il microcontrollore, nello specifico Arduino Nano, interroga tutti i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=13cm]{img/RADAR-Arch}
 \end{figure}
+
+Un altra caratteristica del sistema, derivante dall'architettura scelta è la sua modularità. Di conseguenza l'intero sistema può essere rapidamente adattato per raccogliere e trasmettere a terra i dati di un insieme variabile di sensori connessi. Questo aspetto ha avuto particolare utilità nelle prime fasi
 
 %La scelta di implementare una prima versione di sistema di telemetria è stata conseguente alla necessità immediata di ottenere i dati fondamentali già dalle prime uscite in campo di volo. Si è quindi selezionato un modulo di logging dei dati (SM-Modellbau GPS-Logger 3), integrante un ricevitore GNSS (Global Navigation Satellite System), accelerometro a tre assi e barometro, con registrazione su scheda microSD. La scelta del componente è derivata da vari fattori considerati: i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento, la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), e non ultimo il costo non eccessivamente alto.
 
