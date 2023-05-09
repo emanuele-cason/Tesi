@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{amsmath}
 \renewcommand\refname{Bibliografia} 
 	
 \begin{document}
@@ -73,6 +74,19 @@ Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termin
 Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
 
 \subsubsection*{Modulo rice-trasmettitore}
+A seguito di svariati test condotti su alcuni moduli acquistati negli anni precedenti, operanti a 433 Mhz, sono saltati subito all'occhio problemi come latenze di trasmissione troppo elevate, bassi data rate, portate insufficienti.
+La scelta di moduli più performanti per la trasmissione a terra dei dati (e l'eventuale ricezione di comandi inerenti alla telemetria), si è basata su vari requisiti, tra cui: la compatibilità con la tensione di alimentazione disponibile e consumo elettrico accettabile; un protocollo di comunicazione con il microcontrollore semplice da implementare; l'utilizzo di segnale a modulazione digitale; data rate sufficiente elevato; e la presenza di un connettore coassiale per l'antenna, in modo da localizzarla all'esterno della fusoliera in fibra di carbonio, che ha effetto radio-attenuante.
+\\\\
+Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel suo datasheet \cite{rf-datasheet}:
+\\\\
+Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$
+
+\begin{align*}
+
+P_{TX} &= 19.7 \textnormal{ dBm} = 0.0933 \textnormal{ W} \\
+P_{RX} &= -96 \textnormal{ dBm} = 2.51 \cdot 10^{-13} \textnormal{ W}
+
+\end{align*}
 
 
 \newpage

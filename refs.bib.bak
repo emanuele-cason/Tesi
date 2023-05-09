@@ -7,3 +7,7 @@ OPTyear = {2022},
 OPTnote ={paragraph 4.7}
 }
 
+@Manual{rf-datasheet,
+author = {Chengdu Ebyte Electronic Technology Co.,Ltd.},
+title = {E01-ML01DP5 Datasheet}
+}

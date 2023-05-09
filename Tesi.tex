@@ -3,7 +3,9 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{caption}
+\usepackage{amsmath}
 \renewcommand\refname{Bibliografia} 
+\addtolength{\skip\footins}{8pt}
 	
 \begin{document}
 
@@ -73,7 +75,34 @@ Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termin
 Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
 
 \subsubsection*{Modulo rice-trasmettitore}
-Con vari test su moduli rice-trasmettitori
+A seguito di svariati test condotti su alcuni moduli acquistati negli anni precedenti, operanti a 433 Mhz, sono saltati subito all'occhio problemi come latenze di trasmissione troppo elevate, bassi data rate, portate insufficienti.
+La scelta di moduli più performanti per la trasmissione a terra dei dati (e l'eventuale ricezione di comandi inerenti alla telemetria), si è basata su vari requisiti, tra cui: la compatibilità con la tensione di alimentazione disponibile e consumo elettrico accettabile; un protocollo di comunicazione con il microcontrollore semplice da implementare; l'utilizzo di segnale a modulazione digitale; data rate e portata  sufficientemente elevati; e la presenza di un connettore coassiale per l'antenna, in modo da localizzarla all'esterno della fusoliera in fibra di carbonio, per evitare il suo effetto radio-attenuante.
+\\\\
+Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel datasheet \cite{rf-datasheet}. Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$:
+\begin{equation*}
+\begin{split}
+P_{tx} &= 19.7 \textnormal{ dBm} = 0.0933 \textnormal{ W} \\
+P_{rx} &= -96 \textnormal{ dBm} = 2.51 \cdot 10^{-13} \textnormal{ W}
+\end{split}
+\end{equation*}
+
+\noindent
+Nota l'equazione della trasmissione di Friis, nell'ipotesi di antenne isotrope in trasmissione e ricezione (ovvero con guadagno $G = 0 \textnormal{ dBi} = 1$), trascurando perdite diverse da quella spaziale di propagazione (come perdite di linea, di interferenza, atmosferiche, eccetera):
+\begin{equation}
+P_{rx} = P_{tx} \cdot G_{tx} \cdot G_{rx} \cdot \left(\frac{\lambda}{4 \pi D}\right)^2
+\end{equation}
+Si ottiene una portata massima teorica $D = 6060 \textnormal{ m}$. Essendo tale valore non inferiore alla portata richiesta (dell'ordine di 1000 - 2000 m), è risultato sensato procedere con il test sperimentale, che, pur registrando distanze ben inferiori a quella teorica, probabilmente dovute alle perdite trascurate (intorno a 2300 m), ha confermato la sufficienza della distanza raggiunta.
+
+\subsection*{Stazione di terra}
+La stazione di terra permette il monitoraggio in tempo reale dei valori misurati dai sensori. Per mezzo di un modulo di rice-trasmettitore complementare a quello precedentemente descritto e connesso ad un altro microcontrollore, vengono ricevuti e decodificati i pacchetti provenienti dal velivolo e i relativi dati inviati al computer tramite comunicazione seriale. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=13cm]{img/GS-Arch}
+\end{figure}
+
+\noindent 
+Il software che è stato scelto per il monitoraggio, la visualizzazione e l'eventuale plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali \cite{cosmos}.
 
 \newpage
 \bibliography{refs}

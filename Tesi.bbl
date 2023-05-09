@@ -1,6 +1,12 @@
 \begin{thebibliography}{1}
 
-\bibitem{regulation}
-{\em Air Cargo Challenge 2022 - Participation handbook}.
+\bibitem{rf-datasheet}
+Ltd. Chengdu Ebyte Electronic Technology~Co.
+\newblock {\em E01-ML01DP5 Datasheet}.
+
+\bibitem{cosmos}
+Ryan Melton and Jason Thomas.
+\newblock {\em A Cloud-Based, Open-Source, Command-and-Control Software
+  Paradigm for Space Situational Awareness}, 2017.
 
 \end{thebibliography}
