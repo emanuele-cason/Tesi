@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2023.3.28)  4 MAY 2023 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2023.3.28)  9 MAY 2023 10:27
 entering extended mode
 **./Tesi.tex
 (Tesi.tex
@@ -144,24 +144,42 @@ File: img/RADAR-Arch.png Graphic file (type png)
 <use img/RADAR-Arch.png>
 Package pdftex.def Info: img/RADAR-Arch.png  used on input line 64.
 (pdftex.def)             Requested size: 369.88582pt x 184.68094pt.
- [2 <./img/RADAR-Arch.png>] [3] (Tesi.bbl) [4] (Tesi.aux) ) 
+ [2 <./img/RADAR-Arch.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 71.
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
+
+ []
+
+[3] (Tesi.bbl) [4] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 2453 strings out of 480930
- 41577 string characters out of 2909538
+ 2474 strings out of 480930
+ 41809 string characters out of 2909538
  281960 words of memory out of 3000000
- 18352 multiletter control sequences out of 15000+200000
- 536387 words of font info for 37 fonts, out of 3000000 for 9000
+ 18366 multiletter control sequences out of 15000+200000
+ 539132 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,5n,43p,878b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Emanuele\
-AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Tesi.pdf (5 pages, 353846 bytes).
+ 39i,8n,43p,905b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Emanuele\AppData\Local\MiKTeX\2.9\fon
+ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Tesi.pdf (5 pages, 387242 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -56,8 +56,8 @@ Anche in termini di costi tale scelta risulta molto vantaggiosa: un sistema pre-
 \section*{Struttura del sistema di telemetria}
 In linea generale, il sistema è stato articolato in due nodi. Uno installato a bordo del velivolo e l'altro complementare, parte di una stazione di terra.
 
-\subsection*{Modulo lato velivolo}
-Il modulo a bordo del velivolo è stato progettato con un architettura centralizzata, programmato con un firmware appositamente creato. Il microcontrollore, nello specifico Arduino Nano, interroga tutti i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti.
+\subsection*{Dispositivo lato velivolo}
+Il dispositivo a bordo del velivolo è stato progettato con un architettura centralizzata, programmato con un firmware appositamente creato. Il microcontrollore, nello specifico Arduino Nano, interroga tutti i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti.
 
 \begin{figure}[h]
 	\centering
@@ -67,7 +67,13 @@ Il modulo a bordo del velivolo è stato progettato con un architettura centraliz
 \noindent
 Un altra caratteristica del sistema, derivante dall'architettura scelta è la sua modularità. L'intero sistema infatti, può essere rapidamente adattato per raccogliere e trasmettere a terra i dati di un insieme variabile di sensori connessi. Questo aspetto ha avuto particolare utilità nelle prime fasi del collaudo, durante le quali, viste le scadenze ravvicinate, è stato necessario implementare rapidamente una prima versione del sistema di telemetria, anche a patto di disporre dei dati di un numero ridotto di sensori connessi.
 
-%La scelta di implementare una prima versione di sistema di telemetria è stata conseguente alla necessità immediata di ottenere i dati fondamentali già dalle prime uscite in campo di volo. Si è quindi selezionato un modulo di logging dei dati (SM-Modellbau GPS-Logger 3), integrante un ricevitore GNSS (Global Navigation Satellite System), accelerometro a tre assi e barometro, con registrazione su scheda microSD. La scelta del componente è derivata da vari fattori considerati: i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento, la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), e non ultimo il costo non eccessivamente alto.
+\subsubsection*{Modulo GNSS}
+Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
+\\\\
+Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
+
+\subsubsection*{Modulo rice-trasmettitore}
+Con vari test su moduli rice-trasmettitori
 
 \newpage
 \bibliography{refs}
