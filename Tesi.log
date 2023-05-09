@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  9 MAY 2023 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  10 MAY 2023 01:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -152,20 +152,20 @@ File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
 ) (Tesi.aux)
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 (C:\Users\Emanuele\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf
 .mkii
@@ -237,24 +237,24 @@ Package caption Info: End \AtBeginDocument code.
 <img/logo-unipd.png, id=1, 803.0pt x 803.0pt>
 File: img/logo-unipd.png Graphic file (type png)
 <use img/logo-unipd.png>
-Package pdftex.def Info: img/logo-unipd.png  used on input line 15.
+Package pdftex.def Info: img/logo-unipd.png  used on input line 16.
 (pdftex.def)             Requested size: 80.3047pt x 80.3047pt.
  [1
 
 {C:/Users/Emanuele/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/log
 o-unipd.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
+Underfull \hbox (badness 10000) in paragraph at lines 42--46
 
  []
 
 
-Overfull \hbox (7.24171pt too wide) in paragraph at lines 49--50
+Overfull \hbox (7.24171pt too wide) in paragraph at lines 48--49
 []\OT1/cmr/m/n/12 Prevedere i pun-teggi con-seguenti alle sin-gole es-erci-tazi
 oni di preparazione
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--57
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
 
  []
 
@@ -262,15 +262,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--57
 <img/RADAR-Arch.png, id=16, 515.2851pt x 257.2812pt>
 File: img/RADAR-Arch.png Graphic file (type png)
 <use img/RADAR-Arch.png>
-Package pdftex.def Info: img/RADAR-Arch.png  used on input line 66.
+Package pdftex.def Info: img/RADAR-Arch.png  used on input line 67.
 (pdftex.def)             Requested size: 369.88582pt x 184.68094pt.
- [2 <./img/RADAR-Arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 73--76
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
+[2 <./img/RADAR-Arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 79--83
 
  []
 
@@ -278,35 +278,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--82
 <img/GS-Arch.png, id=27, 1387.584pt x 125.0271pt>
 File: img/GS-Arch.png Graphic file (type png)
 <use img/GS-Arch.png>
-Package pdftex.def Info: img/GS-Arch.png  used on input line 101.
+Package pdftex.def Info: img/GS-Arch.png  used on input line 102.
 (pdftex.def)             Requested size: 369.88582pt x 33.3285pt.
 
-Overfull \hbox (5.4445pt too wide) in paragraph at lines 104--106
-\OT1/cmr/m/n/12 Il soft-ware che ^^Re stato scelto per il mon-i-tor-ag-gio, la 
-vi-su-al-iz-zazione e l'eventuale
+Underfull \hbox (badness 10000) in paragraph at lines 109--112
+
  []
 
-[4 <./img/GS-Arch.png>] [5] (Tesi.bbl
-Underfull \hbox (badness 2435) in paragraph at lines 4--6
+[4 <./img/GS-Arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
+[5] (Tesi.bbl
+Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 8--11
+Underfull \hbox (badness 1448) in paragraph at lines 11--14
 []\OT1/cmr/m/n/12 Ryan Melton and Ja-son Thomas.  \OT1/cmr/m/it/12 A Cloud-Base
 d, Open-Source,
  []
 
 ) [6] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 4086 strings out of 476315
- 72357 string characters out of 5785781
- 1858068 words of memory out of 5000000
- 24507 multiletter control sequences out of 15000+600000
+ 4088 strings out of 476315
+ 72378 string characters out of 5785781
+ 1859068 words of memory out of 5000000
+ 24509 multiletter control sequences out of 15000+600000
  520209 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,67p,908b,257s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 62i,17n,67p,908b,255s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Emanuele\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
 ppen/ec/dpi600\tcrm1200.pk><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Emanuele/AppData/Local/Program
@@ -323,7 +327,7 @@ cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Emanuel
 e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Us
 ers/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
 2.pfb>
-Output written on Tesi.pdf (7 pages, 469554 bytes).
+Output written on Tesi.pdf (7 pages, 473541 bytes).
 PDF statistics:
  98 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
