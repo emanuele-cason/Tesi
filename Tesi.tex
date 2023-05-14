@@ -38,7 +38,7 @@
   \end{center}
 \end{titlepage}
 
-\section*{Introduzione}
+\section{Introduzione}
 Nell'ambito del progetto LiftUp del Dipartimento di Ingegneria Industriale, per la partecipazione all'Air Cargo Challenge 2022, è stato progettato e costruito un velivolo a controllo remoto, candidato poi dal nostro team alla competizione.
 Tutto il processo di progettazione e realizzazione del drone, si è basato sul regolamento di gara, e in particolare sui requisiti di sistema e sui criteri di attribuzione del punteggio. Di tali criteri, la porzione più rilevante è stata dedicata dalla giuria alle prestazioni in volo dell'aeromobile \cite{regulation}. 
 \\\\
@@ -56,10 +56,10 @@ A seguito di varie valutazioni sulla possibilità di acquistare sistemi di telem
 \\\\
 Anche in termini di costi tale scelta risulta molto vantaggiosa: un sistema pre-fabbricato infatti richiede l'acquisto di sensori e componenti aggiuntivi compatibili, spesso limitando la scelta ad un marchio unico e con protocolli non open-source. Al contrario, nel sistema progettato è stato possibile considerare un trade-off per ogni componente e sensore, scegliendo quello più conveniente in termini di prezzo e prestazioni, anche affidandosi a produttori diversi. 
 
-\section*{Struttura del sistema di telemetria}
+\section{Struttura del sistema di telemetria}
 In linea generale, il sistema è stato articolato in due nodi. Uno installato a bordo del velivolo e l'altro complementare, parte di una stazione di terra.
 
-\subsection*{Dispositivo lato velivolo}
+\subsection{Dispositivo lato velivolo}
 Il dispositivo a bordo del velivolo è stato progettato con un architettura centralizzata, programmato con un firmware appositamente creato. Il microcontrollore, nello specifico Arduino Nano, interroga tutti i sensori installati e per mezzo di un modulo dotato di slot micro-SD ne memorizza i valori in un file creato appositamente sulla scheda inserita. Simultaneamente, gli stessi dati vengono trasmessi a terra per mezzo di un componente rice-trasmettitore alla frequenza di 2.4 GHz. Lo stesso componente, riceve eventuali comandi (ad esempio per avviare la registrazione dei dati, o per calibrare la IMU) dalla stazione di terra, e li inoltra al microcontrollore perché vengano eseguiti.
 
 \begin{figure}[h]
@@ -70,31 +70,31 @@ Il dispositivo a bordo del velivolo è stato progettato con un architettura cent
 \noindent
 Un altra caratteristica del sistema, derivante dall'architettura scelta è la sua modularità. L'intero sistema infatti, può essere rapidamente adattato per raccogliere e trasmettere a terra i dati di un insieme variabile di sensori connessi. Questo aspetto ha avuto particolare utilità nelle prime fasi del collaudo, durante le quali, viste le scadenze ravvicinate, è stato necessario implementare rapidamente una prima versione del sistema di telemetria, anche a patto di disporre dei dati di un numero ridotto di sensori connessi.
 
-\subsubsection*{Modulo GNSS}
+\subsubsection{Modulo GNSS}
 Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
 \\\\
 Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
 
-\subsubsection*{Modulo rice-trasmettitore}
+\subsubsection{Modulo rice-trasmettitore}
 A seguito di svariati test condotti su alcuni moduli acquistati negli anni precedenti, operanti a 433 Mhz, sono saltati subito all'occhio problemi come latenze di trasmissione troppo elevate, bassi data rate, portate insufficienti.
 La scelta di moduli più performanti per la trasmissione a terra dei dati (e l'eventuale ricezione di comandi inerenti alla telemetria), si è basata su vari requisiti, tra cui: la compatibilità con la tensione di alimentazione disponibile e consumo elettrico accettabile; un protocollo di comunicazione con il microcontrollore semplice da implementare; l'utilizzo di segnale a modulazione digitale; data rate e portata  sufficientemente elevati; e la presenza di un connettore coassiale per l'antenna, in modo da localizzarla all'esterno della fusoliera in fibra di carbonio, per evitare il suo effetto radio-attenuante.
 \\\\
-Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel datasheet \cite{rf-datasheet}. Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$:
-\begin{equation*}
+Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel datasheet \textsuperscript{\cite{rf-datasheet}}. Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$:
+\begin{equation}
 \begin{split}
 P_{tx} &= 19.7 \textnormal{ dBm} = 0.0933 \textnormal{ W} \\
 P_{rx} &= -96 \textnormal{ dBm} = 2.51 \cdot 10^{-13} \textnormal{ W}
 \end{split}
-\end{equation*}
+\end{equation}
 
 \noindent
 Nota l'equazione della trasmissione di Friis, nell'ipotesi di antenne isotrope in trasmissione e ricezione (ovvero con guadagno $G = 0 \textnormal{ dBi} = 1$), trascurando perdite diverse da quella spaziale di propagazione (come perdite di linea, di interferenza, atmosferiche, eccetera):
 \begin{equation}
 P_{rx} = P_{tx} \cdot G_{tx} \cdot G_{rx} \cdot \left(\frac{\lambda}{4 \pi D}\right)^2
 \end{equation}
-Si ottiene una portata massima teorica $D = 6060 \textnormal{ m}$. Essendo tale valore non inferiore alla portata richiesta (dell'ordine di 1000 - 2000 m), è risultato sensato procedere con il test sperimentale, che, pur registrando distanze ben inferiori a quella teorica, probabilmente dovute alle perdite trascurate (intorno a 2300 m), ha confermato la sufficienza della distanza raggiunta.
+Si ottiene una portata massima teorica $D = 6060 \textnormal{ m}$. Essendo tale valore non inferiore alla portata richiesta (dell'ordine di 2000 m), è risultato sensato procedere all'acquisto e al successivo test sperimentale che, pur registrando distanze ben inferiori a quella teorica (intorno a 2300 m), probabilmente dovute alle perdite trascurate, ha confermato la sufficienza della distanza raggiunta.
 
-\subsection*{Stazione di terra}
+\subsection{Stazione di terra}
 La stazione di terra permette il monitoraggio in tempo reale dei valori misurati dai sensori. Per mezzo di un modulo di rice-trasmettitore complementare a quello precedentemente descritto e connesso ad un altro microcontrollore, vengono ricevuti e decodificati i pacchetti provenienti dal velivolo e i relativi dati inviati al computer tramite comunicazione seriale. 
 
 \begin{figure}[h]
@@ -103,21 +103,33 @@ La stazione di terra permette il monitoraggio in tempo reale dei valori misurati
 \end{figure}
 
 \noindent 
-Il software che è stato scelto per il monitoraggio, la visualizzazione e il plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali \cite{cosmos}.
+Il software che è stato scelto per il monitoraggio, la visualizzazione e il plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali incluse GMI, OLI, Kepler, WISE, OMPS, Ares, Orion, e numerosi programmi di difesa \textsuperscript{\cite{cosmos}}. Dato da riportare a proposito di tale software è la sua contro intuitività nella fase di configurazione, che va effettuata scrivendo manualmente file testuali di setup, secondo una documentazione che pur essendo molto ben curata va a trascurare molti particolari non sempre sottintesi. Nonostante questo svantaggio tuttavia, le potenzialità offerte hanno reso comunque conveniente il suo impiego.
 
-\section*{Previsione dei punteggi}
-Già dai primi voli di collaudo, al fine di ottenere un resoconto quantitativo sui punteggi che i medesimi voli avrebbero totalizzato se fossero stati eseguiti in gara, si è reso necessario disporre dei dati di posizione. In questa circostanza di urgenza, si è sfruttata la modularità del sistema, implementando il solo modulo GNSS e momentaneamente rinunciando alla restante sensoristica. Il sistema ha così permesso di avviare tramite un comando remoto la registrazione dei dati di localizzazione del velivolo e di riceverli a terra in diretta. A seguito di ogni volo, per mezzo di un programma appositamente sviluppato in Python, è stato svolto il post-processing dei file di log, per ricavare i dati utili.
+\section{Previsione dei punteggi}
+Già dai primi voli di collaudo, al fine di ottenere un resoconto quantitativo sui punteggi che i medesimi voli avrebbero totalizzato se fossero stati eseguiti in gara, si è reso necessario disporre dei dati di posizione. In questa circostanza di urgenza dovuta alle scadenze ravvicinate, si è sfruttata la modularità del sistema, implementando il solo modulo GNSS e momentaneamente rinunciando alla restante sensoristica. Il sistema ha così permesso di registrare i dati di localizzazione del velivolo e di riceverli a terra in diretta. A seguito di ogni volo, per mezzo di un programma appositamente sviluppato in Python, è stato svolto il post-processing dei file di log, per ricavare i dati utili.
 \\\\
 I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento \textsuperscript{\cite{regulation}}, sono stati:
 \begin{itemize}
 \item \textbf{Payload} trasportato durante il volo, misurato in termini di massa.
 \item \textbf{Altitudine} raggiunta a 60 secondi del tempo di volo.
-\item \textbf{Distanza} coperta durante i primi 180 secondi del tempo di volo.
+\item \textbf{Distanza} coperta tra il secondo 60 e il secondo 180 del tempo di volo.
 \end{itemize}
 Dove l'inizio della misura del tempo di volo è stato definito in corrispondenza del raggiungimento di 5 km/h di velocità rispetto al suolo (misurata dal modulo GNSS), durante la fase di decollo.
 \\\\
-Una criticità inizialmente riscontrata ha riguardato le fasi di avvio del sistema. Il cold start del ricevitore GNSS, e l'iniziale imprecisione dei dati durante la fase di fixing dei satelliti, ha talvolta falsato le letture di posizione, e di conseguenza le velocità rispetto al suolo rilevate, causando falsi decolli ed errori di calcolo dei parametri di output. Per ovviare al problema, è stato implementato un approccio grafico, tale da permettere di identificare l'istante di decollo effettivo.
+Una criticità inizialmente riscontrata ha riguardato la rilevazione dell'istante di decollo. Si sono infatti osservati, soprattutto nelle fasi immediatamente precedenti a quest'ultimo, picchi di velocità non ragionevoli. A seguito di varie ipotesi si è concluso che tali imprecisioni dei dati erano originate dal cold start del ricevitore GNSS. L'iniziale imprecisione dei dati durante la fase di fixing dei satelliti infatti, ha talvolta falsato le letture di posizione, e di conseguenza le velocità rispetto al suolo derivate, causando falsi decolli e quindi errori di calcolo dei parametri di output. 
+\\\\
+Per ovviare al problema, si è proceduto su due fronti. Sono stati implementati in primo luogo un comando da terra di inizio registrazione in modo tale da avviare la registrazione dopo il fix di un numero sufficiente di satelliti, e in secondo luogo un approccio grafico nel post-processing, tale da permettere di validare l'istante di decollo effettivo rilevato in automatico, sulla base dei dati di velocità ed altitudine visualizzati in un diagramma, al fine di accertare la validità dei dati in seguito prodotti. 
+\\\\
+Nell'immagine sottostante ad esempio è ben visibile come il plot dei dati permetta di distinguere un falso positivo del decollo (evidenziato in rosso), dal decollo effettivo, garantendo il corretto ottenimento dei dati di output (a sinistra).
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=6.5cm]{img/diagramma-decollo}
+	\quad
+	\includegraphics[width=6.5cm]{img/screenshot}
+	\captionsetup{labelformat=empty}
+	\caption{Volo 3 - 6 marzo 2022, ore 14:22:09}
+\end{figure}
 
 \newpage
 \bibliography{refs}
