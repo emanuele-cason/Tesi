@@ -7,6 +7,16 @@
 Ltd. Chengdu Ebyte Electronic Technology~Co.
 \newblock {\em E01-ML01DP5 Datasheet}.
 
+\bibitem{report2019}
+Team LiftUp.
+\newblock Air cargo challenge 2019.
+\newblock Technical report, University of Padua, 2019.
+
+\bibitem{report2022}
+Team LiftUp.
+\newblock Air cargo challenge 2022.
+\newblock Technical report, University of Padua, 2022.
+
 \bibitem{cosmos}
 Ryan Melton and Jason Thomas.
 \newblock {\em A Cloud-Based, Open-Source, Command-and-Control Software

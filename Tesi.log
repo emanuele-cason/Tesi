@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  14 MAY 2023 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  16 MAY 2023 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -311,46 +311,70 @@ File: img/screenshot.png Graphic file (type png)
 <use img/screenshot.png>
 Package pdftex.def Info: img/screenshot.png  used on input line 129.
 (pdftex.def)             Requested size: 184.9429pt x 207.94821pt.
- [6 <./img/diagramma-decollo.png> <./img/screenshot.png>] (Tesi.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--140
+
+ []
+
+[6 <./img/diagramma-decollo.png> <./img/screenshot.png>]
+<img/dimensionamento.png, id=48, 1806.75pt x 384.4764pt>
+File: img/dimensionamento.png Graphic file (type png)
+<use img/dimensionamento.png>
+Package pdftex.def Info: img/dimensionamento.png  used on input line 146.
+(pdftex.def)             Requested size: 398.33858pt x 84.76692pt.
+
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 146--147
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 11--14
+Underfull \hbox (badness 1448) in paragraph at lines 21--24
 []\OT1/cmr/m/n/12 Ryan Melton and Ja-son Thomas.  \OT1/cmr/m/it/12 A Cloud-Base
 d, Open-Source,
  []
 
-) [7] (Tesi.aux) ) 
+) [8 <./img/dimensionamento.png>] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 4113 strings out of 476315
- 72993 string characters out of 5785781
+ 4126 strings out of 476315
+ 73313 string characters out of 5785781
  1859068 words of memory out of 5000000
- 24532 multiletter control sequences out of 15000+600000
+ 24544 multiletter control sequences out of 15000+600000
  520209 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,67p,908b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Emanuele\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\tcrm1200.pk><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Emanuele/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Emanuele/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Emanu
-ele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
-/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi8.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr10.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr12.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Emanuele/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Emanuele/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Emanuel
-e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Us
-ers/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti1
-2.pfb>
-Output written on Tesi.pdf (8 pages, 2022100 bytes).
+ <C:\Users\Emanuele\AppData\Local
+\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Emanuele/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Em
+anuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmex10.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Emanuele/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Emanuele/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Emanuele/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/E
+manuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsy8.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmti12.pfb>
+Output written on Tesi.pdf (9 pages, 2085029 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

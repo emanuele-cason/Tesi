@@ -79,7 +79,7 @@ Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantag
 A seguito di svariati test condotti su alcuni moduli acquistati negli anni precedenti, operanti a 433 Mhz, sono saltati subito all'occhio problemi come latenze di trasmissione troppo elevate, bassi data rate, portate insufficienti.
 La scelta di moduli più performanti per la trasmissione a terra dei dati (e l'eventuale ricezione di comandi inerenti alla telemetria), si è basata su vari requisiti, tra cui: la compatibilità con la tensione di alimentazione disponibile e consumo elettrico accettabile; un protocollo di comunicazione con il microcontrollore semplice da implementare; l'utilizzo di segnale a modulazione digitale; data rate e portata  sufficientemente elevati; e la presenza di un connettore coassiale per l'antenna, in modo da localizzarla all'esterno della fusoliera in fibra di carbonio, per evitare il suo effetto radio-attenuante.
 \\\\
-Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel datasheet \textsuperscript{\cite{rf-datasheet}}. Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$:
+Una volta individuato il dispositivo, è stato possibile effettuare una verifica teorica della sua portata, a partire dai valori indicati nel datasheet \cite{rf-datasheet}. Considerando, in ottica conservativa, la potenza minima di trasmissione e la potenza minima in ricezione, per mantenere il data rate a $250 \textnormal{ kbps}$:
 \begin{equation}
 \begin{split}
 P_{tx} &= 19.7 \textnormal{ dBm} = 0.0933 \textnormal{ W} \\
@@ -103,12 +103,12 @@ La stazione di terra permette il monitoraggio in tempo reale dei valori misurati
 \end{figure}
 
 \noindent 
-Il software che è stato scelto per il monitoraggio, la visualizzazione e il plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali incluse GMI, OLI, Kepler, WISE, OMPS, Ares, Orion, e numerosi programmi di difesa \textsuperscript{\cite{cosmos}}. Dato da riportare a proposito di tale software è la sua contro intuitività nella fase di configurazione, che va effettuata scrivendo manualmente file testuali di setup, secondo una documentazione che pur essendo molto ben curata va a trascurare molti particolari non sempre sottintesi. Nonostante questo svantaggio tuttavia, le potenzialità offerte hanno reso comunque conveniente il suo impiego.
+Il software che è stato scelto per il monitoraggio, la visualizzazione e il plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali incluse GMI, OLI, Kepler, WISE, OMPS, Ares, Orion, e numerosi programmi di difesa \cite{cosmos}. Dato da riportare a proposito di tale software è la sua contro intuitività nella fase di configurazione, che va effettuata scrivendo manualmente file testuali di setup, secondo una documentazione che pur essendo molto ben curata va a trascurare molti particolari non sempre sottintesi. Nonostante questo svantaggio tuttavia, le potenzialità offerte hanno reso comunque conveniente il suo impiego.
 
 \section{Previsione dei punteggi}
 Già dai primi voli di collaudo, al fine di ottenere un resoconto quantitativo sui punteggi che i medesimi voli avrebbero totalizzato se fossero stati eseguiti in gara, si è reso necessario disporre dei dati di posizione. In questa circostanza di urgenza dovuta alle scadenze ravvicinate, si è sfruttata la modularità del sistema, implementando il solo modulo GNSS e momentaneamente rinunciando alla restante sensoristica. Il sistema ha così permesso di registrare i dati di localizzazione del velivolo e di riceverli a terra in diretta. A seguito di ogni volo, per mezzo di un programma appositamente sviluppato in Python, è stato svolto il post-processing dei file di log, per ricavare i dati utili.
 \\\\
-I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento \textsuperscript{\cite{regulation}}, sono stati:
+I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento \cite{regulation}, sono stati:
 \begin{itemize}
 \item \textbf{Payload} trasportato durante il volo, misurato in termini di massa.
 \item \textbf{Altitudine} raggiunta a 60 secondi del tempo di volo.
@@ -130,6 +130,22 @@ Nell'immagine sottostante ad esempio è ben visibile come il plot dei dati perme
 	\captionsetup{labelformat=empty}
 	\caption{Volo 3 - 6 marzo 2022, ore 14:22:09}
 \end{figure}
+
+\section{Verifica del processo di dimensionamento del velivolo}
+Il processo di dimensionamento e progettazione preliminare del velivolo, rappresenta una fase fondamentale per l'ottenimento di un aereo con buone prestazioni. Allo stesso tempo però, il fatto di partire da zero, con un grande numero di requisiti e grandezze obbiettivo da considerare, rende questa operazione altamente complessa, a tal punto che lo stesso algoritmo di dimensionamento si potrebbe considerare un progetto a se stante. 
+\\\\
+Nel corso degli anni, nonostante il variare dei requisiti imposti dal regolamento, la metodologia per ottenere il progetto preliminare è rimasta molto simile e su di essa è stato fondato il lavoro del team per la progettazione di dettaglio e la manifattura dei velivoli candidati alle ultime edizioni della Air Cargo Challenge del 2019 e 2022.
+\\\\
+Come spesso accade nell'ambito ingegneristico, soprattutto nello scontrarsi con problemi complessi, l'approssimazione assume importanza cruciale. In modo complementare, la verifica delle approssimazioni impiegate è anch'essa fondamentale, per garantire risultati attendibili. Per questa ragione, con l'implementazione del sistema di telemetria, si ha finalmente la possibilità di verificare puntualmente, per mezzo dei dati empirici raccolti, la validità delle approssimazioni assunte durante il dimensionamento preliminare e quantificare l'impatto degli eventuali errori introdotti, allo scopo di affinare il processo e renderlo più solido.
+
+\subsection{Il processo di dimensionamento in sintesi}
+Si riassumono brevemente in seguito i vari passaggi del processo di dimensionamento finora adottati e descritti nei report tecnici definitivi del 2019 \cite{report2019} e del 2022 \cite{report2022}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=14cm]{img/dimensionamento}
+\end{figure}
+
 
 \newpage
 \bibliography{refs}
