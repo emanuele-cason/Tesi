@@ -139,13 +139,21 @@ Nel corso degli anni, nonostante il variare dei requisiti imposti dal regolament
 Come spesso accade nell'ambito ingegneristico, soprattutto nello scontrarsi con problemi complessi, l'approssimazione assume importanza cruciale. In modo complementare, la verifica delle approssimazioni impiegate è anch'essa fondamentale, per garantire risultati attendibili. Per questa ragione, con l'implementazione del sistema di telemetria, si ha finalmente la possibilità di verificare puntualmente, per mezzo dei dati empirici raccolti, la validità delle approssimazioni assunte durante il dimensionamento preliminare e quantificare l'impatto degli eventuali errori introdotti, allo scopo di affinare il processo e renderlo più solido.
 
 \subsection{Il processo di dimensionamento in sintesi}
-Si riassumono brevemente in seguito i vari passaggi del processo di dimensionamento finora adottati e descritti nei report tecnici definitivi del 2019 \cite{report2019} e del 2022 \cite{report2022}.
-
+Si riassumono brevemente in seguito i vari passaggi del processo di dimensionamento finora adottati e descritti nei report tecnici definitivi del 2019 \cite{report2019} e del 2022 \cite{report2022}:
+\begin{enumerate}
+\item In primo luogo viene fissato un set di valori per le variabili di massa totale ($M_{TOT}$), coefficiente di lift massimo ($C_{L, max}$) e distanza di decollo ($X_{TO}$). 
+\item Sulla base di questi valori, viene determinata la velocità di decollo ($V_{TO}$), riferita all'istante di liftoff, al quale il velivolo si solleva da terra, ovvero quando forza peso e portanza arrivano ad equivalenza.
+\item Nota la velocità di decollo necessaria, viene calcolata la superficie alare richiesta per generare la relativa portanza, e considerati i limiti dimensionali e le condizioni per la stabilità, è ottenuta una geometria di massima del velivolo, in termini di superficie alare e del piano di coda.
+\item Per ogni geometria ottenuta a partire dal set di dati iniziali fissato, l'algoritmo calcola le performance di salita e crociera, e sulla base dei criteri del regolamento, i punteggi conseguenti. Il set di dati che massimizza i punteggi è quello che viene scelto, e i relativi $M_{TOT}$, $X_{TO}$ e $C_{L, max}$ diventano i valori obbiettivo per il progetto di dettaglio.
+\end{enumerate}
+Il flowchart dell'algoritmo assume quindi la struttura seguente:
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=14cm]{img/dimensionamento}
 \end{figure}
 
+\subsection{Criticità del secondo step}
+A costruzione ultimata, durante il collaudo e la competizione, si è osservata una discrepanza del valore della distanza di decollo di progetto, che era stata imposta a 40 metri, rispetto al quella reale, prevalentemente intorno ai 60 metri, fatto che peraltro ha comportato alcune penalizzazioni in gara. Questo ha spinto a investigare il secondo step del processo, relativo alla stima della velocità di decollo necessaria e critico in quanto in corrispondenza di esso vengono introdotte ipotesi e approssimazioni forti.
 
 \newpage
 \bibliography{refs}
