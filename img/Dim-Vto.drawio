@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-05-16T21:51:18.727Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="db7mNsMk9Hetrs_jD5_7" version="21.3.2" type="device">
+<mxfile host="app.diagrams.net" modified="2023-06-24T12:03:56.139Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="NWH3WxktAX3b5emiIz8I" version="21.3.2" type="device">
   <diagram name="Pagina-1" id="i_QAk7FXhubLlCC6trvr">
-    <mxGraphModel dx="1100" dy="494" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="652" dy="293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,7 +16,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ZwUMcqTqeEHNXdpdNUSc-10" value="Calcolo della potenza disponibile&#xa;(Pᴀ)" style="dashed=0;strokeColor=#dddddd;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;fontStyle=0" parent="1" vertex="1">
-          <mxGeometry x="600" y="390" width="190" height="64" as="geometry" />
+          <mxGeometry x="540" y="390" width="250" height="64" as="geometry" />
         </mxCell>
         <mxCell id="ZwUMcqTqeEHNXdpdNUSc-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZwUMcqTqeEHNXdpdNUSc-12" target="ZwUMcqTqeEHNXdpdNUSc-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -24,13 +24,13 @@
         <mxCell id="ZwUMcqTqeEHNXdpdNUSc-12" value="Simulazione potenza elettrica e rendimento motore su eCalc&#xa;(Pᴇ, ηᴍ)" style="dashed=0;strokeColor=#FF8000;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="270" y="210" width="190" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="ArHZP_o_boDlicrIEaIN-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZwUMcqTqeEHNXdpdNUSc-13" target="ZwUMcqTqeEHNXdpdNUSc-10">
+        <mxCell id="SbKTKKORfgtGkee0HA-L-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZwUMcqTqeEHNXdpdNUSc-13" target="ZwUMcqTqeEHNXdpdNUSc-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZwUMcqTqeEHNXdpdNUSc-13" value="Calcolo potenza all&#39;albero&#xa;(Pꜱ)" style="dashed=0;strokeColor=#dddddd;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="490" y="210" width="170" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="ArHZP_o_boDlicrIEaIN-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZwUMcqTqeEHNXdpdNUSc-14" target="ZwUMcqTqeEHNXdpdNUSc-10">
+        <mxCell id="SbKTKKORfgtGkee0HA-L-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ZwUMcqTqeEHNXdpdNUSc-14" target="ZwUMcqTqeEHNXdpdNUSc-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZwUMcqTqeEHNXdpdNUSc-14" value="Ottenimento del rendimento dell&#39;elica dal datasheet&#xa;(ηᴘ)" style="dashed=0;strokeColor=#DDDDDD;shadow=1;strokeWidth=1;labelPosition=center;verticalLabelPosition=middle;align=center;verticalAlign=middle;spacingLeft=5;fontSize=12;whiteSpace=wrap;fontStyle=0" parent="1" vertex="1">
