@@ -70,6 +70,21 @@ Il dispositivo a bordo del velivolo è stato progettato con un architettura cent
 \noindent
 Un altra caratteristica del sistema, derivante dall'architettura scelta è la sua modularità. L'intero sistema infatti, può essere rapidamente adattato per raccogliere e trasmettere a terra i dati di un insieme variabile di sensori connessi. Questo aspetto ha avuto particolare utilità nelle prime fasi del collaudo, durante le quali, viste le scadenze ravvicinate, è stato necessario implementare rapidamente una prima versione del sistema di telemetria, anche a patto di disporre dei dati di un numero ridotto di sensori connessi.
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=6.5cm]{img/ph-radar}
+	\,
+	\includegraphics[width=6.5cm]{img/ph-radar-near}
+	\captionsetup{labelformat=empty}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=13.35cm]{img/ph-radar-closed}
+	\captionsetup{labelformat=empty}
+\end{figure}
+
+
 \subsubsection{Modulo GNSS}
 Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
 \\\\
@@ -131,6 +146,7 @@ Nell'immagine sottostante ad esempio è ben visibile come il plot dei dati perme
 	\caption{Volo 3 - 6 marzo 2022, ore 14:22:09}
 \end{figure}
 
+\newpage
 \section{Verifica del processo di dimensionamento del velivolo}
 Il processo di dimensionamento e progettazione preliminare del velivolo, rappresenta una fase fondamentale per l'ottenimento di un aereo con buone prestazioni. Allo stesso tempo però, il fatto di partire da zero, con un grande numero di requisiti e grandezze obbiettivo da considerare, rende questa operazione altamente complessa, a tal punto che lo stesso algoritmo di dimensionamento si potrebbe considerare un progetto a se stante. 
 \\\\
@@ -156,25 +172,33 @@ Il flowchart dell'algoritmo assume quindi la struttura seguente:
 A costruzione ultimata, durante il collaudo e la competizione, si è osservata una discrepanza del valore della distanza di decollo di progetto, che era stata imposta a 40 metri, rispetto al quella reale, prevalentemente intorno ai 60 metri, fatto che peraltro ha comportato alcune penalizzazioni in gara. Questo ha spinto a investigare il secondo step del processo, relativo alla stima della velocità di decollo necessaria e critico in quanto in corrispondenza di esso vengono introdotte ipotesi e approssimazioni forti. In particolare: 
 
 \begin{itemize}
-\item[2.1] Viene stimata la potenza meccanica erogata all'albero del motore per mezzo del software eCalc, a partire dai dati di batteria, motore, regolatore di velocità, \textit{eccetera}. Tale potenza meccanica viene poi moltiplicata per il rendimento dell'elica, il cui valore, che è funzione della velocità e degli RPM, è fornito dai dati del costruttore. Ipotizzato che al decollo la manetta sia regolata al 100\%, e quindi gli RPM siano costanti, si ottiene la potenza propulsiva disponibile in funziona della velocità ($P_A$).
+\item[2.1] Viene stimata la potenza meccanica erogata all'albero del motore per mezzo del software eCalc, a partire dai dati di batteria, motore, regolatore di velocità, \textit{eccetera}. Tale potenza meccanica viene poi moltiplicata per il rendimento dell'elica, il cui valore, che è funzione della velocità e degli RPM, è fornito dai dati del costruttore. Ipotizzato che al decollo la manetta sia regolata al 100\%, e quindi gli RPM siano costanti, si ottiene la potenza propulsiva disponibile in funzione della velocità ($P_A$).
 
-\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente trascurabili. Sotto tali assunzioni, per il secondo principio della dinamica, l'accelerazione orizzontale del velivolo al decollo dipende unicamente dalla forza propulsiva (thrust, $T$), secondo la relazione:
+\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente trascurabili ($D = 0$, $F_{AV} = 0$). 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=13cm]{img/forze}
+\end{figure}
+
+Sotto tali assunzioni, per il secondo principio della dinamica, l'accelerazione orizzontale del velivolo al decollo dipende unicamente dalla forza propulsiva (thrust, $T$), secondo la relazione:
 
 \begin{equation}
-T = m \cdot a = m \cdot \frac{dV_\infty}{dt} \cdot \frac{dx}{dx} = m \cdot \frac{V_\infty \cdot dV_\infty}{dx}
+T = M_{TOT} \cdot a = M_{TOT} \cdot \frac{dV_\infty}{dt} \cdot \frac{dx}{dx} = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{dx}
 \end{equation}
 
 \noindent
 Quindi, isolando il termine $dx$ e integrando, si ottiene la velocità al decollo:
 
 \begin{equation}
-dx = m \cdot \frac{V_\infty \cdot dV_\infty}{T} \qquad \Rightarrow \qquad X_{TO} = m \cdot \int_0^{V_{TO}} \, \frac{V_\infty^2}{P_A} \cdot dV_\infty
+dx = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{T} \quad \Rightarrow \quad X_{TO} = M_{TOT} \cdot \int_0^{V_{TO}} \, \frac{V_\infty^2}{P_A(v)} \cdot dV_\infty
 \end{equation}
 \end{itemize}
 
+\newpage
 \noindent
 Nel dettaglio quindi, il secondo step ha la struttura seguente:
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=14cm]{img/dim-vto}
 \end{figure}
@@ -190,9 +214,12 @@ A seguito della competizione, sono stati resi pubblici i risultati di vari test,
 \noindent
 A tale fine è stato scritto un codice MATLAB che rappresenta il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
 \\\\
-Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari dati di origine empirica.
+Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari, dati di origine empirica per correggere il modello attuale.
 
 \subsubsection{Verifica delle ipotesi di resistenza aerodinamica e attrito volvente nulli}
+Tra i dati raccolti dal sistema di telemetria, ci sono quelli di velocità rispetto al suolo, ricavati dal GPS e di accelerazione sui tre assi, provenienti dagli accelerometri. A partire da questi dati, sempre sulla base del secondo principio della dinamica, è possibile ricavare la forza risultante agente sul velivolo, pari alla somma vettoriale delle forze di propulsione ($\overrightarrow{T}$), resistenza aerodinamica ($\overrightarrow{D}$) e attrito volvente ($\overrightarrow{F_{AV}}$). L'obbiettivo di tale processo è il ricavare la forza risultante orizzontale, realmente agente sul velivolo in fase di decollo, per confrontarla con la forza propulsiva.
+\\\\
+Per fare ciò, è stato sviluppato uno script specifico in codice Python. Tale programma per funzionare richiede in input gli istanti di inizio del decollo e di liftoff. Per determinarli permette all'utente la loro selezione, direttamente sul diagramma di velocità e altitudine in funzione del tempo, rispettivamente attraverso un marker verticale verde e uno rosso. Successivamente, una seconda finestra mostra gli istanti selezionati sul grafico delle accelerazioni, consentendo la verifica della correttezza dei tempi scelti.
 
 \newpage
 \bibliography{refs}

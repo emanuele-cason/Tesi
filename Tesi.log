@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  25 JUN 2023 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  25 JUN 2023 18:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -264,97 +264,148 @@ File: img/RADAR-Arch.png Graphic file (type png)
 <use img/RADAR-Arch.png>
 Package pdftex.def Info: img/RADAR-Arch.png  used on input line 67.
 (pdftex.def)             Requested size: 369.88582pt x 184.68094pt.
+<img/ph-radar.jpg, id=17, 3003.22pt x 3004.22375pt>
+File: img/ph-radar.jpg Graphic file (type jpg)
+<use img/ph-radar.jpg>
+Package pdftex.def Info: img/ph-radar.jpg  used on input line 75.
+(pdftex.def)             Requested size: 184.9429pt x 184.96724pt.
+<img/ph-radar-near.jpg, id=18, 2306.6175pt x 2307.62125pt>
+File: img/ph-radar-near.jpg Graphic file (type jpg)
+<use img/ph-radar-near.jpg>
+Package pdftex.def Info: img/ph-radar-near.jpg  used on input line 77.
+(pdftex.def)             Requested size: 184.9429pt x 185.0008pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/ph-radar-closed.jpg, id=19, 3548.25626pt x 2398.9625pt>
+File: img/ph-radar-closed.jpg Graphic file (type jpg)
+<use img/ph-radar-closed.jpg>
+Package pdftex.def Info: img/ph-radar-closed.jpg  used on input line 83.
+(pdftex.def)             Requested size: 379.84445pt x 256.7853pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 [2 <./img/RADAR-Arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 79--83
+Overfull \vbox (5.5694pt too high) has occurred while \output is active []
+
+
+[3 <./img/ph-radar.jpg> <./img/ph-radar-near.jpg> <./img/ph-radar-closed.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
 
  []
 
-[3]
-<img/GS-Arch.png, id=27, 1387.584pt x 125.0271pt>
+[4]
+<img/GS-Arch.png, id=37, 1387.584pt x 125.0271pt>
 File: img/GS-Arch.png Graphic file (type png)
 <use img/GS-Arch.png>
-Package pdftex.def Info: img/GS-Arch.png  used on input line 102.
+Package pdftex.def Info: img/GS-Arch.png  used on input line 117.
 (pdftex.def)             Requested size: 369.88582pt x 33.3285pt.
- [4 <./img/GS-Arch.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--127
+
+ []
+
+[5 <./img/GS-Arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 132--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+Underfull \hbox (badness 10000) in paragraph at lines 132--139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+Underfull \hbox (badness 10000) in paragraph at lines 132--139
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
-
- []
-
-[5]
-<img/diagramma-decollo.png, id=40, 2007.5pt x 2257.43375pt>
+[6]
+<img/diagramma-decollo.png, id=47, 2007.5pt x 2257.43375pt>
 File: img/diagramma-decollo.png Graphic file (type png)
 <use img/diagramma-decollo.png>
-Package pdftex.def Info: img/diagramma-decollo.png  used on input line 127.
+Package pdftex.def Info: img/diagramma-decollo.png  used on input line 142.
 (pdftex.def)             Requested size: 184.9429pt x 207.94821pt.
-<img/screenshot.png, id=41, 2007.5pt x 2257.43375pt>
+<img/screenshot.png, id=48, 2007.5pt x 2257.43375pt>
 File: img/screenshot.png Graphic file (type png)
 <use img/screenshot.png>
-Package pdftex.def Info: img/screenshot.png  used on input line 129.
+Package pdftex.def Info: img/screenshot.png  used on input line 144.
 (pdftex.def)             Requested size: 184.9429pt x 207.94821pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--140
+ [7 <./img/diagramma-decollo.png> <./img/screenshot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 151--156
 
  []
 
-[6 <./img/diagramma-decollo.png> <./img/screenshot.png>] [7]
-<img/dimensionamento.png, id=51, 1508.9976pt x 377.9721pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--156
+
+ []
+
+[8]
+<img/dimensionamento.png, id=57, 1508.9976pt x 377.9721pt>
 File: img/dimensionamento.png Graphic file (type png)
 <use img/dimensionamento.png>
-Package pdftex.def Info: img/dimensionamento.png  used on input line 152.
+Package pdftex.def Info: img/dimensionamento.png  used on input line 168.
 (pdftex.def)             Requested size: 398.33858pt x 99.77571pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 152--153
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 168--169
  [][] 
  []
 
-[8 <./img/dimensionamento.png>]
-<img/dim-vto.png, id=56, 1745.3205pt x 726.3135pt>
+[9 <./img/dimensionamento.png>]
+<img/forze.png, id=62, 2344.76pt x 627.34375pt>
+File: img/forze.png Graphic file (type png)
+<use img/forze.png>
+Package pdftex.def Info: img/forze.png  used on input line 181.
+(pdftex.def)             Requested size: 369.88582pt x 98.96031pt.
+
+Overfull \hbox (18.37354pt too wide) in paragraph at lines 184--185
+[]\OT1/cmr/m/n/12 Sotto tali as-sun-zioni, per il sec-ondo prin-ci-pio della di
+-nam-ica, l'accelerazione
+ []
+
+
+Overfull \hbox (1.6626pt too wide) in paragraph at lines 184--185
+\OT1/cmr/m/n/12 oriz-zon-tale del ve-liv-olo al decollo dipende uni-ca-mente da
+lla forza propul-
+ []
+
+[10 <./img/forze.png>]
+<img/dim-vto.png, id=68, 1745.3205pt x 726.3135pt>
 File: img/dim-vto.png Graphic file (type png)
 <use img/dim-vto.png>
-Package pdftex.def Info: img/dim-vto.png  used on input line 179.
+Package pdftex.def Info: img/dim-vto.png  used on input line 203.
 (pdftex.def)             Requested size: 398.33858pt x 165.763pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 179--180
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 203--204
  [][] 
  []
 
-[9 <./img/dim-vto.png>]
-<img/plot-PA-crop.png, id=62, 586.19pt x 438.63875pt>
+<img/plot-PA-crop.png, id=69, 586.19pt x 438.63875pt>
 File: img/plot-PA-crop.png Graphic file (type png)
 <use img/plot-PA-crop.png>
-Package pdftex.def Info: img/plot-PA-crop.png  used on input line 187.
+Package pdftex.def Info: img/plot-PA-crop.png  used on input line 211.
 (pdftex.def)             Requested size: 369.88582pt x 276.77892pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
 
  []
 
-[10 <./img/plot-PA-crop.png>] (Tesi.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+[11 <./img/dim-vto.png>] [12 <./img/plot-PA-crop.png>] [13] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
@@ -366,12 +417,12 @@ Underfull \hbox (badness 1448) in paragraph at lines 21--24
 d, Open-Source,
  []
 
-) [11] (Tesi.aux) ) 
+) [14] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 4149 strings out of 476315
- 73796 string characters out of 5785781
+ 4200 strings out of 476315
+ 74931 string characters out of 5785781
  1859068 words of memory out of 5000000
- 24565 multiletter control sequences out of 15000+600000
+ 24611 multiletter control sequences out of 15000+600000
  520209 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,67p,908b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -392,9 +443,9 @@ e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
 sers/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmti12.pfb>
-Output written on Tesi.pdf (12 pages, 2214290 bytes).
+Output written on Tesi.pdf (15 pages, 8218598 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 143 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
