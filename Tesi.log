@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  25 JUN 2023 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  26 JUN 2023 00:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,75 +337,103 @@ File: img/screenshot.png Graphic file (type png)
 <use img/screenshot.png>
 Package pdftex.def Info: img/screenshot.png  used on input line 144.
 (pdftex.def)             Requested size: 184.9429pt x 207.94821pt.
- [7 <./img/diagramma-decollo.png> <./img/screenshot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 151--156
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--156
+Underfull \hbox (badness 10000) in paragraph at lines 150--155
 
  []
 
-[8]
-<img/dimensionamento.png, id=57, 1508.9976pt x 377.9721pt>
+[7 <./img/diagramma-decollo.png> <./img/screenshot.png>]
+<img/dimensionamento.png, id=54, 1508.9976pt x 377.9721pt>
 File: img/dimensionamento.png Graphic file (type png)
 <use img/dimensionamento.png>
-Package pdftex.def Info: img/dimensionamento.png  used on input line 168.
+Package pdftex.def Info: img/dimensionamento.png  used on input line 167.
 (pdftex.def)             Requested size: 398.33858pt x 99.77571pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 168--169
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 167--168
  [][] 
  []
 
-[9 <./img/dimensionamento.png>]
-<img/forze.png, id=62, 2344.76pt x 627.34375pt>
+[8]
+<img/forze.png, id=58, 2344.76pt x 627.34375pt>
 File: img/forze.png Graphic file (type png)
 <use img/forze.png>
-Package pdftex.def Info: img/forze.png  used on input line 181.
+Package pdftex.def Info: img/forze.png  used on input line 180.
 (pdftex.def)             Requested size: 369.88582pt x 98.96031pt.
 
-Overfull \hbox (18.37354pt too wide) in paragraph at lines 184--185
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (18.37354pt too wide) in paragraph at lines 183--184
 []\OT1/cmr/m/n/12 Sotto tali as-sun-zioni, per il sec-ondo prin-ci-pio della di
 -nam-ica, l'accelerazione
  []
 
 
-Overfull \hbox (1.6626pt too wide) in paragraph at lines 184--185
+Overfull \hbox (1.6626pt too wide) in paragraph at lines 183--184
 \OT1/cmr/m/n/12 oriz-zon-tale del ve-liv-olo al decollo dipende uni-ca-mente da
 lla forza propul-
  []
 
-[10 <./img/forze.png>]
-<img/dim-vto.png, id=68, 1745.3205pt x 726.3135pt>
+[9 <./img/dimensionamento.png>]
+<img/dim-vto.png, id=63, 1745.3205pt x 726.3135pt>
 File: img/dim-vto.png Graphic file (type png)
 <use img/dim-vto.png>
-Package pdftex.def Info: img/dim-vto.png  used on input line 203.
+Package pdftex.def Info: img/dim-vto.png  used on input line 201.
 (pdftex.def)             Requested size: 398.33858pt x 165.763pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 203--204
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 201--202
  [][] 
  []
 
-<img/plot-PA-crop.png, id=69, 586.19pt x 438.63875pt>
+[10 <./img/forze.png> <./img/dim-vto.png>]
+<img/plot-PA-crop.png, id=70, 586.19pt x 438.63875pt>
 File: img/plot-PA-crop.png Graphic file (type png)
 <use img/plot-PA-crop.png>
-Package pdftex.def Info: img/plot-PA-crop.png  used on input line 211.
+Package pdftex.def Info: img/plot-PA-crop.png  used on input line 209.
 (pdftex.def)             Requested size: 369.88582pt x 276.77892pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--218
+Underfull \hbox (badness 10000) in paragraph at lines 212--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--223
+Underfull \hbox (badness 10000) in paragraph at lines 218--223
 
  []
 
-[11 <./img/dim-vto.png>] [12 <./img/plot-PA-crop.png>] [13] (Tesi.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--223
+
+ []
+
+[11 <./img/plot-PA-crop.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 225--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--233
+
+ []
+
+[12] [13]
+<img/select-to-1.png, id=82, 609.27625pt x 416.55624pt>
+File: img/select-to-1.png Graphic file (type png)
+<use img/select-to-1.png>
+Package pdftex.def Info: img/select-to-1.png  used on input line 237.
+(pdftex.def)             Requested size: 369.88582pt x 252.89127pt.
+<img/select-to-2.png, id=83, 609.27625pt x 416.55624pt>
+File: img/select-to-2.png Graphic file (type png)
+<use img/select-to-2.png>
+Package pdftex.def Info: img/select-to-2.png  used on input line 242.
+(pdftex.def)             Requested size: 369.88582pt x 252.89127pt.
+ [14 <./img/select-to-1.png> <./img/select-to-2.png>] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
@@ -417,12 +445,12 @@ Underfull \hbox (badness 1448) in paragraph at lines 21--24
 d, Open-Source,
  []
 
-) [14] (Tesi.aux) ) 
+) [15] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 4200 strings out of 476315
- 74931 string characters out of 5785781
- 1859068 words of memory out of 5000000
- 24611 multiletter control sequences out of 15000+600000
+ 4223 strings out of 476315
+ 75445 string characters out of 5785781
+ 1861068 words of memory out of 5000000
+ 24632 multiletter control sequences out of 15000+600000
  520209 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,67p,908b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -443,9 +471,9 @@ e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
 sers/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmti12.pfb>
-Output written on Tesi.pdf (15 pages, 8218598 bytes).
+Output written on Tesi.pdf (16 pages, 8281376 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 150 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

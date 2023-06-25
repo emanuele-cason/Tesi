@@ -146,7 +146,6 @@ Nell'immagine sottostante ad esempio è ben visibile come il plot dei dati perme
 	\caption{Volo 3 - 6 marzo 2022, ore 14:22:09}
 \end{figure}
 
-\newpage
 \section{Verifica del processo di dimensionamento del velivolo}
 Il processo di dimensionamento e progettazione preliminare del velivolo, rappresenta una fase fondamentale per l'ottenimento di un aereo con buone prestazioni. Allo stesso tempo però, il fatto di partire da zero, con un grande numero di requisiti e grandezze obbiettivo da considerare, rende questa operazione altamente complessa, a tal punto che lo stesso algoritmo di dimensionamento si potrebbe considerare un progetto a se stante. 
 \\\\
@@ -174,7 +173,7 @@ A costruzione ultimata, durante il collaudo e la competizione, si è osservata u
 \begin{itemize}
 \item[2.1] Viene stimata la potenza meccanica erogata all'albero del motore per mezzo del software eCalc, a partire dai dati di batteria, motore, regolatore di velocità, \textit{eccetera}. Tale potenza meccanica viene poi moltiplicata per il rendimento dell'elica, il cui valore, che è funzione della velocità e degli RPM, è fornito dai dati del costruttore. Ipotizzato che al decollo la manetta sia regolata al 100\%, e quindi gli RPM siano costanti, si ottiene la potenza propulsiva disponibile in funzione della velocità ($P_A$).
 
-\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente trascurabili ($D = 0$, $F_{AV} = 0$). 
+\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente del carrello trascurabili ($D = 0$, $F_{AV} = 0$). 
 
 \begin{figure}[h]
 	\centering
@@ -195,7 +194,6 @@ dx = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{T} \quad \Rightarrow \quad X_
 \end{equation}
 \end{itemize}
 
-\newpage
 \noindent
 Nel dettaglio quindi, il secondo step ha la struttura seguente:
 \begin{figure}[!h]
@@ -217,9 +215,32 @@ A tale fine è stato scritto un codice MATLAB che rappresenta il set di dati spe
 Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari, dati di origine empirica per correggere il modello attuale.
 
 \subsubsection{Verifica delle ipotesi di resistenza aerodinamica e attrito volvente nulli}
-Tra i dati raccolti dal sistema di telemetria, ci sono quelli di velocità rispetto al suolo, ricavati dal GPS e di accelerazione sui tre assi, provenienti dagli accelerometri. A partire da questi dati, sempre sulla base del secondo principio della dinamica, è possibile ricavare la forza risultante agente sul velivolo, pari alla somma vettoriale delle forze di propulsione ($\overrightarrow{T}$), resistenza aerodinamica ($\overrightarrow{D}$) e attrito volvente ($\overrightarrow{F_{AV}}$). L'obbiettivo di tale processo è il ricavare la forza risultante orizzontale, realmente agente sul velivolo in fase di decollo, per confrontarla con la forza propulsiva.
+Tra le ipotesi più forti utilizzate per semplificare i calcoli, ci sono quelle di resistenza aerodinamica e attrito volvente nulli. Si vuole quindi confrontare la forza considerata nel dimensionamento, ovvero la sola spinta propulsiva ($\overrightarrow{T}$), funzione della velocità, con la forza risultante realmente agente sul velivolo in fase di decollo ($\overrightarrow{R}$), anch'essa in funzione della velocità. 
 \\\\
-Per fare ciò, è stato sviluppato uno script specifico in codice Python. Tale programma per funzionare richiede in input gli istanti di inizio del decollo e di liftoff. Per determinarli permette all'utente la loro selezione, direttamente sul diagramma di velocità e altitudine in funzione del tempo, rispettivamente attraverso un marker verticale verde e uno rosso. Successivamente, una seconda finestra mostra gli istanti selezionati sul grafico delle accelerazioni, consentendo la verifica della correttezza dei tempi scelti.
+I valori di spinta propulsiva da considerare sono quelli empirici, ricavati dai test condotti in galleria del vento \cite{windtunnel}. Se infatti venissero scelti i dati previsti dal modello visto in precedenza (eCalc + datasheet elica), questi sarebbero già soggetti ai relativi errori, valutati nel paragrafo precedente, e non permetterebbero di valutare in modo isolato quelli dovuti unicamente alle ipotesi di attrito volvente e drag nulli.
+\\\\
+Per quanto riguarda la valutazione della forza risultante, tra i dati raccolti dal sistema di telemetria ci sono quelli di velocità rispetto al suolo, ricavati dal GPS e di accelerazione sui tre assi, provenienti dagli accelerometri. A partire da questi dati, sempre sulla base del secondo principio della dinamica, è possibile ricavare la forza risultante agente sul velivolo, che ne provoca l'accelerazione, pari alla somma vettoriale delle forze:
+\begin{equation}
+M_{TOT} \cdot \overrightarrow{a} = \overrightarrow{T} + \overrightarrow{D} + \overrightarrow{F_{AV}} = \overrightarrow{R}
+\end{equation}
+C'è da notare tuttavia, che la relazione precedente per come è scritta è valida solamente durante l'accelerazione orizzontale del velivolo, cioè prima che esso si stacchi da terra, in quanto a tal punto andrebbero considerate anche le componenti verticali di forze e accelerazioni.
+\\\\
+\noindent
+A tal proposito, è stato sviluppato uno script specifico in codice Python. Tale programma in primo luogo richiede di selezionare il file .csv contenente i dati registrati durante uno specifico volo. 
+\\\\
+A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).\\
+Al fine di validare la selezione, vengono visualizzati gli istanti scelti su un secondo diagramma, rappresentante le accelerazioni sui tre assi in funzione del tempo. In tale diagramma infatti, è possibile individuare l'intervallo di accelerazione orizzontale, dall'osservazione qualitativa dei dati, dove appaiono ben distinguibili le vibrazioni dovute allo scorrimento del carrello sul terreno erboso.
+
+\newpage
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13cm]{img/select-to-1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=13cm]{img/select-to-2}
+\end{figure}
 
 \newpage
 \bibliography{refs}
