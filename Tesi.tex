@@ -158,7 +158,7 @@ A costruzione ultimata, durante il collaudo e la competizione, si è osservata u
 \begin{itemize}
 \item[2.1] Viene stimata la potenza meccanica erogata all'albero del motore per mezzo del software eCalc, a partire dai dati di batteria, motore, regolatore di velocità, \textit{eccetera}. Tale potenza meccanica viene poi moltiplicata per il rendimento dell'elica, il cui valore, che è funzione della velocità e degli RPM, è fornito dai dati del costruttore. Ipotizzato che al decollo la manetta sia regolata al 100\%, e quindi gli RPM siano costanti, si ottiene la potenza propulsiva disponibile in funziona della velocità ($P_A$).
 
-\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente trascurabili. Sotto tali assunzioni, per il primo principio della dinamica, l'accelerazione orizzontale del velivolo al decollo dipende unicamente dalla forza propulsiva (thrust, $T$), secondo la relazione:
+\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente trascurabili. Sotto tali assunzioni, per il secondo principio della dinamica, l'accelerazione orizzontale del velivolo al decollo dipende unicamente dalla forza propulsiva (thrust, $T$), secondo la relazione:
 
 \begin{equation}
 T = m \cdot a = m \cdot \frac{dV_\infty}{dt} \cdot \frac{dx}{dx} = m \cdot \frac{V_\infty \cdot dV_\infty}{dx}
@@ -180,7 +180,19 @@ Nel dettaglio quindi, il secondo step ha la struttura seguente:
 \end{figure}
 
 \subsubsection{Verifica dei risultati di potenza propulsiva disponibile}
+A seguito della competizione, sono stati resi pubblici i risultati di vari test, condotti con la stessa configurazione di elica e motore (uniformata da regolamento) in galleria del vento a throttle massimo \cite{windtunnel}. Risulta quindi utile confrontare tali dati di potenza disponibile empirici, con quelli previsti secondo modalità ed ipotesi prima descritte.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=13cm]{img/plot-PA-crop}
+\end{figure}
+
+\noindent
+A tale fine è stato scritto un codice MATLAB che rappresenta il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
+\\\\
+Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari dati di origine empirica.
+
+\subsubsection{Verifica delle ipotesi di resistenza aerodinamica e attrito volvente nulli}
 
 \newpage
 \bibliography{refs}
