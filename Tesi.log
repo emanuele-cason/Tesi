@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  26 JUN 2023 00:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 JUN 2023 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -422,18 +422,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--233
 
  []
 
-[12] [13]
-<img/select-to-1.png, id=82, 609.27625pt x 416.55624pt>
+[12]
+<img/select-to-1.png, id=79, 609.27625pt x 416.55624pt>
 File: img/select-to-1.png Graphic file (type png)
 <use img/select-to-1.png>
-Package pdftex.def Info: img/select-to-1.png  used on input line 237.
-(pdftex.def)             Requested size: 369.88582pt x 252.89127pt.
-<img/select-to-2.png, id=83, 609.27625pt x 416.55624pt>
+Package pdftex.def Info: img/select-to-1.png  used on input line 236.
+(pdftex.def)             Requested size: 284.52756pt x 194.53566pt.
+<img/select-to-2.png, id=80, 609.27625pt x 416.55624pt>
 File: img/select-to-2.png Graphic file (type png)
 <use img/select-to-2.png>
-Package pdftex.def Info: img/select-to-2.png  used on input line 242.
-(pdftex.def)             Requested size: 369.88582pt x 252.89127pt.
- [14 <./img/select-to-1.png> <./img/select-to-2.png>] (Tesi.bbl
+Package pdftex.def Info: img/select-to-2.png  used on input line 243.
+(pdftex.def)             Requested size: 284.52756pt x 194.53566pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--252
+
+ []
+
+[13 <./img/select-to-1.png> <./img/select-to-2.png>]
+<img/TvsR-6-4-c.png, id=86, 561.09625pt x 414.54875pt>
+File: img/TvsR-6-4-c.png Graphic file (type png)
+<use img/TvsR-6-4-c.png>
+Package pdftex.def Info: img/TvsR-6-4-c.png  used on input line 266.
+(pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
+<img/TvsR-6-5-c.png, id=87, 561.09625pt x 414.54875pt>
+File: img/TvsR-6-5-c.png Graphic file (type png)
+<use img/TvsR-6-5-c.png>
+Package pdftex.def Info: img/TvsR-6-5-c.png  used on input line 267.
+(pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
+<img/TvsR-7-2-c.png, id=88, 561.09625pt x 414.54875pt>
+File: img/TvsR-7-2-c.png Graphic file (type png)
+<use img/TvsR-7-2-c.png>
+Package pdftex.def Info: img/TvsR-7-2-c.png  used on input line 273.
+(pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
+<img/TvsR-7-3-c.png, id=89, 561.09625pt x 414.54875pt>
+File: img/TvsR-7-3-c.png Graphic file (type png)
+<use img/TvsR-7-3-c.png>
+Package pdftex.def Info: img/TvsR-7-3-c.png  used on input line 274.
+(pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14 <./img/TvsR-6-4-c.png> <./img/TvsR-6-5-c.png>] [15 <./img/TvsR-7-2-c.png> <
+./img/TvsR-7-3-c.png>] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
@@ -445,15 +476,15 @@ Underfull \hbox (badness 1448) in paragraph at lines 21--24
 d, Open-Source,
  []
 
-) [15] (Tesi.aux) ) 
+) [16] (Tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 4223 strings out of 476315
- 75445 string characters out of 5785781
+ 4267 strings out of 476315
+ 76409 string characters out of 5785781
  1861068 words of memory out of 5000000
- 24632 multiletter control sequences out of 15000+600000
+ 24672 multiletter control sequences out of 15000+600000
  520209 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,17n,67p,908b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 62i,17n,67p,909b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Emanuele\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
 appen/ec/dpi600\tcrm1200.pk><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Emanuele/AppData/Local/Progra
@@ -471,9 +502,9 @@ e/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
 sers/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy
 8.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
 nts/cm/cmti12.pfb>
-Output written on Tesi.pdf (16 pages, 8281376 bytes).
+Output written on Tesi.pdf (17 pages, 8414226 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
+ 161 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

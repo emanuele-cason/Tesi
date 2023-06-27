@@ -86,7 +86,7 @@ Un altra caratteristica del sistema, derivante dall'architettura scelta è la su
 
 
 \subsubsection{Modulo GNSS}
-Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
+Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc.} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
 \\\\
 Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
 
@@ -173,7 +173,7 @@ A costruzione ultimata, durante il collaudo e la competizione, si è osservata u
 \begin{itemize}
 \item[2.1] Viene stimata la potenza meccanica erogata all'albero del motore per mezzo del software eCalc, a partire dai dati di batteria, motore, regolatore di velocità, \textit{eccetera}. Tale potenza meccanica viene poi moltiplicata per il rendimento dell'elica, il cui valore, che è funzione della velocità e degli RPM, è fornito dai dati del costruttore. Ipotizzato che al decollo la manetta sia regolata al 100\%, e quindi gli RPM siano costanti, si ottiene la potenza propulsiva disponibile in funzione della velocità ($P_A$).
 
-\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 ($M_{TOT}$, $X_{TO}$ e $C_{L, max}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag e attrito volvente del carrello trascurabili ($D = 0$, $F_{AV} = 0$). 
+\item[2.2] Nota la potenza disponibile ($P_A$) e i dati di progetto scelti allo step 1 (in particolare $M_{TOT}$, $X_{TO}$), viene calcolata la velocità di decollo. In questo caso le ipotesi introdotte, da verificare, sono quelle di drag aerodinamico del velivolo e attrito volvente del carrello trascurabili ($D = 0$, $F_{AV} = 0$). 
 
 \begin{figure}[h]
 	\centering
@@ -219,28 +219,65 @@ Tra le ipotesi più forti utilizzate per semplificare i calcoli, ci sono quelle 
 \\\\
 I valori di spinta propulsiva da considerare sono quelli empirici, ricavati dai test condotti in galleria del vento \cite{windtunnel}. Se infatti venissero scelti i dati previsti dal modello visto in precedenza (eCalc + datasheet elica), questi sarebbero già soggetti ai relativi errori, valutati nel paragrafo precedente, e non permetterebbero di valutare in modo isolato quelli dovuti unicamente alle ipotesi di attrito volvente e drag nulli.
 \\\\
-Per quanto riguarda la valutazione della forza risultante, tra i dati raccolti dal sistema di telemetria ci sono quelli di velocità rispetto al suolo, ricavati dal GPS e di accelerazione sui tre assi, provenienti dagli accelerometri. A partire da questi dati, sempre sulla base del secondo principio della dinamica, è possibile ricavare la forza risultante agente sul velivolo, che ne provoca l'accelerazione, pari alla somma vettoriale delle forze:
+Per quanto riguarda la valutazione della forza risultante, tra i dati raccolti dal sistema di telemetria ci sono quelli di velocità rispetto al suolo, ricavati dal modulo GNSS e di accelerazione sui tre assi, provenienti dagli accelerometri. A partire da questi dati, sempre sulla base del secondo principio della dinamica, è possibile ricavare la forza risultante agente sul velivolo, che ne provoca l'accelerazione, pari alla somma vettoriale delle forze:
 \begin{equation}
-M_{TOT} \cdot \overrightarrow{a} = \overrightarrow{T} + \overrightarrow{D} + \overrightarrow{F_{AV}} = \overrightarrow{R}
+m \cdot \overrightarrow{a} = \overrightarrow{T} + \overrightarrow{D} + \overrightarrow{F_{AV}} = \overrightarrow{R}
 \end{equation}
 C'è da notare tuttavia, che la relazione precedente per come è scritta è valida solamente durante l'accelerazione orizzontale del velivolo, cioè prima che esso si stacchi da terra, in quanto a tal punto andrebbero considerate anche le componenti verticali di forze e accelerazioni.
 \\\\
 \noindent
 A tal proposito, è stato sviluppato uno script specifico in codice Python. Tale programma in primo luogo richiede di selezionare il file .csv contenente i dati registrati durante uno specifico volo. 
 \\\\
-A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).\\
-Al fine di validare la selezione, vengono visualizzati gli istanti scelti su un secondo diagramma, rappresentante le accelerazioni sui tre assi in funzione del tempo. In tale diagramma infatti, è possibile individuare l'intervallo di accelerazione orizzontale, dall'osservazione qualitativa dei dati, dove appaiono ben distinguibili le vibrazioni dovute allo scorrimento del carrello sul terreno erboso.
-
-\newpage
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=13cm]{img/select-to-1}
-\end{figure}
+A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).
+Al fine di validare la selezione, vengono visualizzati gli istanti scelti su un secondo diagramma, rappresentante le accelerazioni sui tre assi in funzione del tempo. In tale diagramma infatti, è possibile individuare l'intervallo di accelerazione orizzontale dall'osservazione qualitativa dei dati, dove appaiono ben distinguibili le vibrazioni dovute allo scorrimento del carrello sul terreno erboso.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=13cm]{img/select-to-2}
+	\includegraphics[width=10cm]{img/select-to-1}
 \end{figure}
+
+\vspace{-0.5cm}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=10cm]{img/select-to-2}
+	\captionsetup{labelformat=empty}
+	\caption{Volo 5 - 3 luglio 2022, ore 17:51:10}
+\end{figure}
+
+\noindent
+In seguito, viene richiesta in input la massa totale del velivolo al decollo, dato che è stato raccolto prima di ogni volo, e variabile in base alla quantità di payload di volta in volta stabilita.
+\\\\
+A questo punto il software dispone di tutti i dati necessari per calcolare l'accelerazione, e quindi la forza risultante che la provoca, al variare della velocità. Per una maggiore affidabilità dei dati, si è scelto di effettuare tale calcolo a partire da due misure indipendenti:
+\begin{itemize}
+\item Velocità misurata dal modulo GNSS: il dato di accelerazione viene ottenuto dal rapporto tra la variazione di velocità tra due campionamenti, e il relativo tempo intercorso: 
+\begin{equation}
+a_i = \frac{v_i - v_{i-1}}{t_i - t_{i-1}} = \frac{\Delta v_i}{\Delta t_i}
+\end{equation}
+
+\item Dati dell'accelerometro: in particolare quello rivolto lungo l'asse longitudinale del velivolo. 
+\end{itemize}
+
+\noindent
+La forza risultante $R$ in funzione della velocità, viene quindi ottenuta dal prodotto di ognuna delle misure di accelerazione per la massa $m$, riferita al dato volo e le due linee riportate su un diagramma, insieme al valore di spinta dell'elica ($T$), che è funzione della velocità dell'aria. Si noti quindi, che il diagramma è più accurato nel caso di voli in assenza di vento, durante i quali velocità rispetto al suolo e rispetto all'aria sono praticamente coincidenti.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=6.5cm]{img/TvsR-6-4-c}
+	\includegraphics[width=6.5cm]{img/TvsR-6-5-c}
+	\captionsetup{labelformat=empty}
+	\caption{Voli 4 e 5 - 3 luglio 2022, vento assente}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=6.5cm]{img/TvsR-7-2-c}
+	\includegraphics[width=6.5cm]{img/TvsR-7-3-c}
+	\captionsetup{labelformat=empty}
+	\caption{Voli 2 e 3 - 26 maggio 2023, vento assente}
+\end{figure}
+
+\noindent
+I diagrammi ottenuti, per la maggior parte dei voli in assenza di vento, dimostrano come la forza risultante agente sul velivolo al decollo sia di molto inferiore alla spinta esercitata dalla propulsione.
 
 \newpage
 \bibliography{refs}
