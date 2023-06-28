@@ -60,8 +60,8 @@ Ne è nata la necessità di disporre di un sistema di registrazione e trasmissio
 \begin{itemize}
 \item Prevedere i punteggi conseguenti alle singole esercitazioni di preparazione svolte nei mesi precedenti alla gara.
 \item Individuare le migliori condizioni di manovra.
-\item Valutare le prestazioni durante il collaudo.
 \item Verificare l'accettabilità delle approssimazioni, delle relazioni analitiche e dei processi adottati durante il dimensionamento e design preliminare del velivolo.
+\item Valutare le prestazioni durante il collaudo.
 \end{itemize}
 
 \noindent
@@ -99,7 +99,7 @@ Un altra caratteristica del sistema, derivante dall'architettura scelta è la su
 
 
 \subsubsection{Modulo GNSS}
-Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc.} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
+Il modulo ricevitore GNSS \footnote{"Global Navigation Satellite System", termine generico per indicare sistemi di cui fanno parte GPS, GLONASS, GALILEO, ecc. In seguito per semplicità si utilizzeranno equivalentemente gli acronimi GPS e GNSS.} è stato scelto in base a vari fattori considerati: in primis la consistenza dei dati con quelli che sarebbero stati raccolti in competizione (dove da regolamento la giuria utilizza lo stesso modulo per calcolare i punteggi di gara), i valori di risoluzione e velocità di aggiornamento dei dati relativamente alti, la compatibilità con i sistemi a bordo dell'aeromodello e di radiocontrollo, e non ultimo il costo non eccessivamente alto. Il modulo integra inoltre accelerometro a tre assi e barometro, consente la registrazione dei dati su una scheda microSD indipendente da quella principale e il loro invio simultaneo a dispositivi che supportano il protocollo FrSky Smart Port, per la telemetria in tempo reale.
 \\\\
 Se da un lato scegliere lo stesso modulo utilizzato dalla giuria è stato vantaggioso in termini di coerenza e affidabilità dei dati raccolti, l'implementazione della trasmissione in diretta dei dati a terra ha causato non poche complicazioni. Si è reso necessario infatti decodificare il protocollo proprietario Smart Port per renderlo leggibile dal microcontrollore, per mezzo di una libreria appositamente riadattata, operazione fortemente complicata dalla scarsità della documentazione resa pubblica sul funzionamento del protocollo.
 
@@ -208,7 +208,7 @@ dx = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{T} \quad \Rightarrow \quad X_
 \end{itemize}
 
 \noindent
-Nel dettaglio quindi, il secondo step ha la struttura seguente:
+Nel dettaglio quindi, il secondo step ha la struttura descritta dal diagramma sottostante.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=11.6cm]{img/dim-vto-v2}
@@ -299,6 +299,17 @@ A meno di alcune differenze tra un volo e l'altro, dovute a fattori quali la var
 Dalle queste osservazioni quindi, si può dedurre che la differenza verticale, punto per punto, tra $T$ e $R$, rappresenta le forze resistenti di drag aerodinamico e attrito volvente del carrello che diversamente da quanto ipotizzato nel dimensionamento, non sono trascurabili.
 \\\\
 Possibili soluzioni da implementare per migliorare il processo di dimensionamento, potrebbero essere il quantificare tali forze resistenti, ad esempio con espressioni empiriche per stimare l'attrito volvente oppure l'adottare un processo iterativo, che in prima battuta trascuri la forza di drag per determinare una geometria di primo tentativo, e successivamente la quantifichi per affinare le geometrie dell'iterazione n-esima.
+
+\section{Misura della velocità del flusso indisturbato}
+I dati di velocità rispetto al suolo finora considerati, utilizzati per la previsione dei punteggi (sezione 3) e la verifica delle ipotesi del dimensionamento (sezione 4), sono quelli ricavati dal modulo GNSS. Nel primo caso si è trattato di una scelta forzata dagli standard imposti dal regolamento. Nel secondo caso si è scelto di utilizzare tali dati perché stabili e accurati, e in condizioni di assenza di vento, adeguati allo scopo.
+\\\\
+Per ulteriori valutazioni delle prestazioni tuttavia, in particolare di quelle in quota, dove non è possibile appurare l'assenza di vento, si è reso necessario disporre del dato di velocità del flusso indisturbato. Per questa ragione è stato implementato un tubo di Pitot (come da immagini a pag. 4), con le prese statica e dinamica collegate agli ingressi di un sensore di pressione differenziale. Dal dato di differenza di pressione, il sistema di telemetria a bordo ricava la velocità del flusso, secondo l'equazione di Bernoulli:
+
+\begin{equation}
+v = \sqrt{\frac{2 \cdot \Delta p}{\rho}}
+\end{equation}
+
+
 
 \newpage
 \bibliography{refs}
