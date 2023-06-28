@@ -7,6 +7,15 @@
 \renewcommand\refname{Bibliografia} 
 \addtolength{\skip\footins}{8pt}
 \setlength\intextsep{18pt}
+\renewcommand*\contentsname{Indice}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 	
 \begin{document}
 
@@ -38,7 +47,11 @@
   \end{center}
 \end{titlepage}
 
-\section{Introduzione}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduzione} 
 Nell'ambito del progetto LiftUp del Dipartimento di Ingegneria Industriale, per la partecipazione all'Air Cargo Challenge 2022, è stato progettato e costruito un velivolo a controllo remoto, candidato poi dal nostro team alla competizione.
 Tutto il processo di progettazione e realizzazione del drone, si è basato sul regolamento di gara, e in particolare sui requisiti di sistema e sui criteri di attribuzione del punteggio. Di tali criteri, la porzione più rilevante è stata dedicata dalla giuria alle prestazioni in volo dell'aeromobile \cite{regulation}. 
 \\\\
@@ -48,7 +61,7 @@ Ne è nata la necessità di disporre di un sistema di registrazione e trasmissio
 \item Prevedere i punteggi conseguenti alle singole esercitazioni di preparazione svolte nei mesi precedenti alla gara.
 \item Individuare le migliori condizioni di manovra.
 \item Valutare le prestazioni durante il collaudo.
-\item Verificare l'accettabilità delle approssimazioni, delle relazioni analitiche e dei processi iterativi adottati durante i processi di dimensionamento e design preliminare del velivolo.
+\item Verificare l'accettabilità delle approssimazioni, delle relazioni analitiche e dei processi adottati durante il dimensionamento e design preliminare del velivolo.
 \end{itemize}
 
 \noindent
@@ -196,9 +209,9 @@ dx = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{T} \quad \Rightarrow \quad X_
 
 \noindent
 Nel dettaglio quindi, il secondo step ha la struttura seguente:
-\begin{figure}[!h]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=14cm]{img/dim-vto}
+	\includegraphics[width=11.6cm]{img/dim-vto-v2}
 \end{figure}
 
 \subsubsection{Verifica dei risultati di potenza propulsiva disponibile}
@@ -277,7 +290,15 @@ La forza risultante $R$ in funzione della velocità, viene quindi ottenuta dal p
 \end{figure}
 
 \noindent
-I diagrammi ottenuti, per la maggior parte dei voli in assenza di vento, dimostrano come la forza risultante agente sul velivolo al decollo sia di molto inferiore alla spinta esercitata dalla propulsione.
+A meno di alcune differenze tra un volo e l'altro, dovute a fattori quali la variazione della massa del payload caricato nella cargo-bay, l'andamento qualitativo delle linee nei vari diagrammi assume caratteristiche ricorrenti:
+\begin{itemize}
+\item In primo luogo le forze risultanti, calcolate sulla base delle rispettive accelerazioni al variare della velocità, hanno andamenti coerenti tra loro, a conferma del fatto che le misurazioni sono state svolte correttamente.
+\item L'andamento delle forze risultanti è decrescente, con una pendenza all'incirca simile a quella della forza propulsiva.
+\item Le forze risultanti, appaiono traslate verso il basso rispetto alla forza propulsiva, con valori che, punto per punto, sono intorno al 50\% di quest'ultima.
+\end{itemize}
+Dalle queste osservazioni quindi, si può dedurre che la differenza verticale, punto per punto, tra $T$ e $R$, rappresenta le forze resistenti di drag aerodinamico e attrito volvente del carrello che diversamente da quanto ipotizzato nel dimensionamento, non sono trascurabili.
+\\\\
+Possibili soluzioni da implementare per migliorare il processo di dimensionamento, potrebbero essere il quantificare tali forze resistenti, ad esempio con espressioni empiriche per stimare l'attrito volvente oppure l'adottare un processo iterativo, che in prima battuta trascuri la forza di drag per determinare una geometria di primo tentativo, e successivamente la quantifichi per affinare le geometrie dell'iterazione n-esima.
 
 \newpage
 \bibliography{refs}
