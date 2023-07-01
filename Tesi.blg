@@ -3,48 +3,49 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Tesi.aux
 Reallocating 'name_of_file' (item size: 1) to 5 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: refs.bib
-Warning--to sort, need author, organization, or key in regulation
-You've used 6 entries,
-            2118 wiz_defined-function locations,
-            520 strings with 4541 characters,
-and the built_in function-call counts, 1151 in all, are:
-= -- 111
-> -- 42
+Warning--entry type for "arpav" isn't style-file defined
+--line 44 of file refs.bib
+You've used 7 entries,
+            1791 wiz_defined-function locations,
+            472 strings with 4130 characters,
+and the built_in function-call counts, 817 in all, are:
+= -- 65
+> -- 29
 < -- 0
-+ -- 19
-- -- 12
-* -- 49
-:= -- 215
-add.period$ -- 14
-call.type$ -- 6
-change.case$ -- 23
++ -- 14
+- -- 7
+* -- 18
+:= -- 146
+add.period$ -- 16
+call.type$ -- 7
+change.case$ -- 6
 chr.to.int$ -- 0
 cite$ -- 7
-duplicate$ -- 50
-empty$ -- 100
-format.name$ -- 12
-if$ -- 231
+duplicate$ -- 43
+empty$ -- 98
+format.name$ -- 7
+if$ -- 179
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 7
 missing$ -- 0
-newline$ -- 29
-num.names$ -- 10
-pop$ -- 27
+newline$ -- 33
+num.names$ -- 6
+pop$ -- 26
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 0
 quote$ -- 0
-skip$ -- 36
+skip$ -- 19
 stack$ -- 0
-substring$ -- 31
-swap$ -- 5
+substring$ -- 0
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 1
-while$ -- 10
-width$ -- 7
-write$ -- 55
+type$ -- 0
+warning$ -- 0
+while$ -- 6
+width$ -- 8
+write$ -- 63
 (There was 1 warning)

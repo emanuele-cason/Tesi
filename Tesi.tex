@@ -303,17 +303,53 @@ Possibili soluzioni da implementare per migliorare il processo di dimensionament
 \section{Misura della velocità del flusso indisturbato}
 I dati di velocità rispetto al suolo finora considerati, utilizzati per la previsione dei punteggi (sezione 3) e la verifica delle ipotesi del dimensionamento (sezione 4), sono quelli ricavati dal modulo GNSS. Nel primo caso si è trattato di una scelta forzata dagli standard imposti dal regolamento. Nel secondo caso si è scelto di utilizzare tali dati perché stabili e accurati, e in condizioni di assenza di vento, adeguati allo scopo.
 \\\\
-Per ulteriori valutazioni delle prestazioni tuttavia, in particolare di quelle in quota, dove non è possibile appurare l'assenza di vento, si è reso necessario disporre del dato di velocità del flusso indisturbato. Per questa ragione è stato implementato un tubo di Pitot (come da immagini a pag. 4), con le prese statica e dinamica collegate agli ingressi di un sensore di pressione differenziale. Dal dato di differenza di pressione, il sistema di telemetria a bordo ricava la velocità del flusso, secondo l'equazione di Bernoulli:
+Per ulteriori valutazioni delle prestazioni tuttavia, in particolare di quelle in quota, dove non è possibile appurare l'assenza di vento, si è reso necessario disporre del dato di velocità del flusso indisturbato. Per questa ragione è stato implementato un tubo di Pitot (come da immagini a pag. 4), con le prese statica e dinamica collegate agli ingressi di un sensore di pressione differenziale. Dal dato di differenza di pressione registrato dal sistema di telemetria di bordo, un ulteriore script determina la velocità del flusso, secondo l'equazione di Bernoulli.
 
 \begin{equation}
 v = \sqrt{\frac{2 \cdot \Delta p}{\rho}}
 \end{equation}
 
+\noindent
+Dove la densità è stata ricavata dai dati meteorologici della stazione ARPAV più vicina \cite{arpav} e si può ritenere costante durante il volo.
+\\\\
+Diagrammando i risultati tuttavia, è facile rendersi conto di come questi siano di difficile impiego, per l'elevato rumore di fondo. Per questa ragione si è implementata una funzione di smoothing, che permette di ottenere dati più leggibili. Infine le misure di velocità rispetto all'aria, e velocità rispetto al suolo sono rappresentate nello stesso diagramma, sempre in funzione del tempo:
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{img/pitot-offset-3}
+	\captionsetup{labelformat=empty}
+	\caption{Volo 3 - 26 maggio 2023}
+\end{figure}
+
+\noindent
+Si osserva qualitativamente come le due misure siano differenti per un offset pressocché costante. Tale differenza è imputabile a un elevato numero di fattori, come la geometria del tubo di Pitot, l'errore sistematico di misura del sensore, gli errori di postazione (ovvero di posizionamento del tubo rispetto al flusso indisturbato) e molti altri, che in generale sono di difficile previsione tramite approccio analitico. Al fine di disporre di dati utilizzabili quindi, va operata una calibrazione di massima del sensore.
+
+\subsection{Calibrazione del tubo di Pitot}
+In prima approssimazione, si vuole calibrare il tubo di Pitot determinando il valore costante di offset tra i due set di misure.
+\\\\
+Al fine di isolare il più possibile gli effetti del vento reale, durante il volo è stata eseguita una traiettoria allungata, con due lati approssimativamente paralleli, tale da minimizzare l'impatto delle manovre di virata e da rimanere nello spazio aereo consentito. Il tracciato, plottato in Google Earth ha assunto quindi la forma seguente:
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=6.5cm]{img/traiettoria-3}
+	\includegraphics[width=6.5cm]{img/traiettoria-isolata-3}
+	\captionsetup{labelformat=empty}
+	\caption{Traiettoria volo 3 e intervallo usato per la calibrazione}
+\end{figure}
+
+\noindent
+Una volta selezionato tale intervallo all'interno del software appositamente creato, quest'ultimo trasla il set di dati di velocità dell'aria verso l'alto di una quantità costante, imponendo che la velocità media coincida con la media della velocità rispetto al suolo (misurata dal modulo GNSS), nello stesso intervallo.
+\\\\
+Infine il diagramma delle velocità così calibrato è quello riportato:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{img/pitot-calibrato-3}
+\end{figure}
 
 \newpage
 \bibliography{refs}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 
 
 \end{document}
