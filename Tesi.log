@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  1 JUL 2023 19:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  1 JUL 2023 21:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,76 +577,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 259--263
 
  []
 
-<img/TvsR-6-4-c.png, id=218, 561.09625pt x 414.54875pt>
+<img/TvsR-6-4-c.png, id=219, 561.09625pt x 414.54875pt>
 File: img/TvsR-6-4-c.png Graphic file (type png)
 <use img/TvsR-6-4-c.png>
 Package pdftex.def Info: img/TvsR-6-4-c.png  used on input line 277.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
-<img/TvsR-6-5-c.png, id=219, 561.09625pt x 414.54875pt>
+<img/TvsR-6-5-c.png, id=220, 561.09625pt x 414.54875pt>
 File: img/TvsR-6-5-c.png Graphic file (type png)
 <use img/TvsR-6-5-c.png>
 Package pdftex.def Info: img/TvsR-6-5-c.png  used on input line 278.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
 [15 <./img/select-to-2.png>]
-<img/TvsR-7-2-c.png, id=227, 561.09625pt x 414.54875pt>
+<img/TvsR-7-2-c.png, id=228, 561.09625pt x 414.54875pt>
 File: img/TvsR-7-2-c.png Graphic file (type png)
 <use img/TvsR-7-2-c.png>
-Package pdftex.def Info: img/TvsR-7-2-c.png  used on input line 284.
+Package pdftex.def Info: img/TvsR-7-2-c.png  used on input line 285.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
-<img/TvsR-7-3-c.png, id=228, 561.09625pt x 414.54875pt>
+<img/TvsR-7-3-c.png, id=229, 561.09625pt x 414.54875pt>
 File: img/TvsR-7-3-c.png Graphic file (type png)
 <use img/TvsR-7-3-c.png>
-Package pdftex.def Info: img/TvsR-7-3-c.png  used on input line 285.
+Package pdftex.def Info: img/TvsR-7-3-c.png  used on input line 286.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
  [16 <./img/TvsR-6-4-c.png> <./img/TvsR-6-5-c.png> <./img/TvsR-7-2-c.png> <./im
 g/TvsR-7-3-c.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 297--300
+Underfull \hbox (badness 10000) in paragraph at lines 298--301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--305
+Underfull \hbox (badness 10000) in paragraph at lines 303--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--315
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 310--314
-
- []
-
-<img/pitot-offset-3.png, id=244, 589.20125pt x 416.55624pt>
+<img/pitot-offset-3.png, id=246, 589.20125pt x 416.55624pt>
 File: img/pitot-offset-3.png Graphic file (type png)
 <use img/pitot-offset-3.png>
-Package pdftex.def Info: img/pitot-offset-3.png  used on input line 317.
+Package pdftex.def Info: img/pitot-offset-3.png  used on input line 318.
 (pdftex.def)             Requested size: 341.43306pt x 241.38667pt.
-[18 <./img/pitot-offset-3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--330
 
  []
 
-<img/traiettoria-3.png, id=254, 548.0475pt x 548.0475pt>
+[18 <./img/pitot-offset-3.png>]
+<img/traiettoria-3.png, id=255, 548.0475pt x 548.0475pt>
 File: img/traiettoria-3.png Graphic file (type png)
 <use img/traiettoria-3.png>
-Package pdftex.def Info: img/traiettoria-3.png  used on input line 332.
+Package pdftex.def Info: img/traiettoria-3.png  used on input line 333.
 (pdftex.def)             Requested size: 184.9429pt x 184.9455pt.
-<img/traiettoria-isolata-3.png, id=255, 548.0475pt x 548.0475pt>
+<img/traiettoria-isolata-3.png, id=256, 548.0475pt x 548.0475pt>
 File: img/traiettoria-isolata-3.png Graphic file (type png)
 <use img/traiettoria-isolata-3.png>
-Package pdftex.def Info: img/traiettoria-isolata-3.png  used on input line 333.
+Package pdftex.def Info: img/traiettoria-isolata-3.png  used on input line 334.
 
 (pdftex.def)             Requested size: 184.9429pt x 184.9455pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--342
+Underfull \hbox (badness 10000) in paragraph at lines 339--343
 
  []
 
-[19 <./img/traiettoria-3.png> <./img/traiettoria-isolata-3.png>]
-<img/pitot-calibrato-3.png, id=265, 593.21625pt x 416.55624pt>
+<img/pitot-calibrato-3.png, id=258, 593.21625pt x 416.55624pt>
 File: img/pitot-calibrato-3.png Graphic file (type png)
 <use img/pitot-calibrato-3.png>
-Package pdftex.def Info: img/pitot-calibrato-3.png  used on input line 345.
-(pdftex.def)             Requested size: 341.43306pt x 239.7595pt.
- [20 <./img/pitot-calibrato-3.png>] [21] (Tesi.bbl
+Package pdftex.def Info: img/pitot-calibrato-3.png  used on input line 346.
+(pdftex.def)             Requested size: 327.20668pt x 229.77403pt.
+[19 <./img/traiettoria-3.png> <./img/traiettoria-isolata-3.png>] [20 <./img/pit
+ot-calibrato-3.png>] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
@@ -659,18 +661,18 @@ d, Open-Source,
  []
 
 )
-Overfull \hbox (29.11761pt too wide) in paragraph at lines 361--363
+Overfull \hbox (29.11761pt too wide) in paragraph at lines 362--364
 \OT1/cmr/m/n/12 repos-i-tory: [][]$\OT1/cmtt/m/n/12 https : / / github . com / 
 emanuele-[]cason / kowalsky-[]post-[]processing$[][] 
  []
 
-[22] (Tesi.aux)
+[21] (Tesi.aux)
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 31D9E637491B6E8B8FC3071EC4BE5C12;3294.
  ) 
 Here is how much of TeX's memory you used:
- 10935 strings out of 476315
- 179594 string characters out of 5785781
+ 10934 strings out of 476315
+ 179587 string characters out of 5785781
  1859068 words of memory out of 5000000
  31171 multiletter control sequences out of 15000+600000
  520546 words of font info for 61 fonts, out of 8000000 for 9000
@@ -695,9 +697,9 @@ manuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmtt10.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on Tesi.pdf (23 pages, 9818006 bytes).
+Output written on Tesi.pdf (22 pages, 9817641 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -116,14 +116,14 @@ P_{rx} &= -96 \textnormal{ dBm} = 2.51 \cdot 10^{-13} \textnormal{ W}
 \end{equation}
 
 \noindent
-Nota l'equazione della trasmissione di Friis, nell'ipotesi di antenne isotrope in trasmissione e ricezione (ovvero con guadagno $G = 0 \textnormal{ dBi} = 1$), trascurando perdite diverse da quella spaziale di propagazione (come perdite di linea, di interferenza, atmosferiche, eccetera):
+Nota l'equazione della trasmissione di Friis, nell'ipotesi di antenne isotrope in trasmissione e ricezione (ovvero con guadagno $G = 0 \textnormal{ dBi} = 1$), trascurando perdite diverse da quella spaziale di propagazione (come perdite di linea, di interferenza, atmosferiche, \textit{eccetera}):
 \begin{equation}
 P_{rx} = P_{tx} \cdot G_{tx} \cdot G_{rx} \cdot \left(\frac{\lambda}{4 \pi D}\right)^2
 \end{equation}
 Si ottiene una portata massima teorica $D = 6060 \textnormal{ m}$. Essendo tale valore non inferiore alla portata richiesta (dell'ordine di 2000 m), è risultato sensato procedere all'acquisto e al successivo test sperimentale che, pur registrando distanze ben inferiori a quella teorica (intorno a 2300 m), probabilmente dovute alle perdite trascurate, ha confermato la sufficienza della distanza raggiunta.
 
 \subsection{Stazione di terra}
-La stazione di terra permette il monitoraggio in tempo reale dei valori misurati dai sensori. Per mezzo di un modulo di rice-trasmettitore complementare a quello precedentemente descritto e connesso ad un altro microcontrollore, vengono ricevuti e decodificati i pacchetti provenienti dal velivolo e i relativi dati inviati al computer tramite comunicazione seriale. 
+La stazione di terra permette il monitoraggio in tempo reale dei valori misurati dai sensori. Per mezzo di un modulo rice-trasmettitore complementare a quello precedentemente descritto e connesso ad un altro microcontrollore, vengono ricevuti e decodificati i pacchetti provenienti dal velivolo e i relativi dati inviati al computer tramite comunicazione seriale. 
 
 \begin{figure}[h]
 	\centering
@@ -144,7 +144,7 @@ I tre fattori principali per l'attribuzione del punteggio del singolo volo, come
 \end{itemize}
 Dove l'inizio della misura del tempo di volo è stato definito in corrispondenza del raggiungimento di 5 km/h di velocità rispetto al suolo (misurata dal modulo GNSS), durante la fase di decollo.
 \\\\
-Una criticità inizialmente riscontrata ha riguardato la rilevazione dell'istante di decollo. Si sono infatti osservati, soprattutto nelle fasi immediatamente precedenti a quest'ultimo, picchi di velocità non ragionevoli. A seguito di varie ipotesi si è concluso che tali imprecisioni dei dati erano originate dal cold start del ricevitore GNSS. L'iniziale imprecisione dei dati durante la fase di fixing dei satelliti infatti, ha talvolta falsato le letture di posizione, e di conseguenza le velocità rispetto al suolo derivate, causando falsi decolli e quindi errori di calcolo dei parametri di output. 
+Una criticità inizialmente riscontrata ha riguardato la rilevazione dell'istante di decollo. Si sono infatti osservati, soprattutto nelle fasi immediatamente precedenti a quest'ultimo, picchi di velocità non ragionevoli. A seguito di varie ipotesi si è concluso che tali imprecisioni dei dati erano originate dal cold start del ricevitore GNSS. L'iniziale imprecisione dei dati durante la fase di fixing dei satelliti infatti, ha talvolta falsato le letture di posizione, e di conseguenza le velocità rispetto al suolo derivate, causando falsi positivi del decollo e quindi errori di calcolo dei parametri di output. 
 \\\\
 Per ovviare al problema, si è proceduto su due fronti. Sono stati implementati in primo luogo un comando da terra di inizio registrazione in modo tale da avviare la registrazione dopo il fix di un numero sufficiente di satelliti, e in secondo luogo un approccio grafico nel post-processing, tale da permettere di validare l'istante di decollo effettivo rilevato in automatico, sulla base dei dati di velocità ed altitudine visualizzati in un diagramma, al fine di accertare la validità dei dati in seguito prodotti. 
 \\\\
@@ -164,7 +164,7 @@ Il processo di dimensionamento e progettazione preliminare del velivolo, rappres
 \\\\
 Nel corso degli anni, nonostante il variare dei requisiti imposti dal regolamento, la metodologia per ottenere il progetto preliminare è rimasta molto simile e su di essa è stato fondato il lavoro del team per la progettazione di dettaglio e la manifattura dei velivoli candidati alle ultime edizioni della Air Cargo Challenge del 2019 e 2022.
 \\\\
-Come spesso accade nell'ambito ingegneristico, soprattutto nello scontrarsi con problemi complessi, l'approssimazione assume importanza cruciale. In modo complementare, la verifica delle approssimazioni impiegate è anch'essa fondamentale, per garantire risultati attendibili. Per questa ragione, con l'implementazione del sistema di telemetria, si ha finalmente la possibilità di verificare puntualmente, per mezzo dei dati empirici raccolti, la validità delle approssimazioni assunte durante il dimensionamento preliminare e quantificare l'impatto degli eventuali errori introdotti, allo scopo di affinare il processo e renderlo più solido.
+Come spesso accade nell'ambito ingegneristico, soprattutto nello scontrarsi con problemi complessi, l'approssimazione assume importanza cruciale. In modo complementare, la verifica delle approssimazioni impiegate è anch'essa fondamentale per garantire risultati attendibili. Per questa ragione, con l'implementazione del sistema di telemetria, si ha finalmente la possibilità di verificare puntualmente, per mezzo dei dati empirici raccolti, la validità delle approssimazioni assunte durante il dimensionamento preliminare e quantificare l'impatto degli eventuali errori introdotti, allo scopo di affinare il processo e renderlo più solido.
 
 \subsection{Il processo di dimensionamento in sintesi}
 Si riassumono brevemente in seguito i vari passaggi del processo di dimensionamento finora adottati e descritti nei report tecnici definitivi del 2019 \cite{report2019} e del 2022 \cite{report2022}:
@@ -208,7 +208,7 @@ dx = M_{TOT} \cdot \frac{V_\infty \cdot dV_\infty}{T} \quad \Rightarrow \quad X_
 \end{itemize}
 
 \noindent
-Nel dettaglio quindi, il secondo step ha la struttura descritta dal diagramma sottostante.
+Nel dettaglio quindi, il secondo step ha la struttura descritta dal diagramma che segue.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=11.6cm]{img/dim-vto-v2}
@@ -223,9 +223,9 @@ A seguito della competizione, sono stati resi pubblici i risultati di vari test,
 \end{figure}
 
 \noindent
-A tale fine è stato scritto un codice MATLAB \footnote{File: \texttt{potenza\_disponibile.m}} che rappresenta il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
+A tale fine è stato scritto un codice MATLAB \footnote{File: \texttt{potenza\_disponibile.m}} che rappresenta con il diagramma seguente il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
 \\\\
-Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari, dati di origine empirica per correggere il modello attuale.
+Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova per il blocco motore-elica, per usare nelle future progettazioni preliminari dati di origine empirica per correggere il modello attuale.
 
 \subsubsection{Verifica delle ipotesi di resistenza aerodinamica e attrito volvente nulli}
 Tra le ipotesi più forti utilizzate per semplificare i calcoli, ci sono quelle di resistenza aerodinamica e attrito volvente nulli. Si vuole quindi confrontare la forza considerata nel dimensionamento, ovvero la sola spinta propulsiva ($\overrightarrow{T}$), funzione della velocità, con la forza risultante realmente agente sul velivolo in fase di decollo ($\overrightarrow{R}$), anch'essa in funzione della velocità. 
@@ -239,7 +239,7 @@ m \cdot \overrightarrow{a} = \overrightarrow{T} + \overrightarrow{D} + \overrigh
 C'è da notare tuttavia, che la relazione precedente per come è scritta è valida solamente durante l'accelerazione orizzontale del velivolo, cioè prima che esso si stacchi da terra, in quanto a tal punto andrebbero considerate anche le componenti verticali di forze e accelerazioni.
 \\\\
 \noindent
-A tal proposito, è stato sviluppato uno specifico in codice Python \footnote{File: \texttt{csv-resolve-takeoff-v2.py}}. Tale programma in primo luogo richiede di selezionare il file .csv contenente i dati registrati durante uno specifico volo. A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).
+A tal proposito, è stato sviluppato uno specifico in codice Python \footnote{File: \texttt{csv-resolve-takeoff-v2.py}}. Tale programma in primo luogo richiede di selezionare il file \texttt{.csv} contenente i dati registrati durante uno specifico volo. A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).
 Al fine di validare la selezione, vengono visualizzati gli istanti scelti su un secondo diagramma, rappresentante le accelerazioni sui tre assi in funzione del tempo. In tale diagramma infatti, è possibile individuare l'intervallo di accelerazione orizzontale dall'osservazione qualitativa dei dati, dove appaiono ben distinguibili le vibrazioni dovute allo scorrimento del carrello sul terreno erboso.
 
 \begin{figure}[H]
@@ -279,6 +279,7 @@ La forza risultante $R$ in funzione della velocità, viene quindi ottenuta dal p
 	\captionsetup{labelformat=empty}
 	\caption{Voli 4 e 5 - 3 luglio 2022, vento assente}
 \end{figure}
+\vspace{-0.8cm}
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=6.5cm]{img/TvsR-7-2-c}
@@ -291,7 +292,7 @@ La forza risultante $R$ in funzione della velocità, viene quindi ottenuta dal p
 A meno di alcune differenze tra un volo e l'altro, dovute a fattori quali la variazione della massa del payload caricato nella cargo-bay, l'andamento qualitativo delle linee nei vari diagrammi assume caratteristiche ricorrenti:
 \begin{itemize}
 \item In primo luogo le forze risultanti, calcolate sulla base delle rispettive accelerazioni al variare della velocità, hanno andamenti coerenti tra loro, a conferma del fatto che le misurazioni sono state svolte correttamente.
-\item L'andamento delle forze risultanti è decrescente, con una pendenza all'incirca simile a quella della forza propulsiva.
+\item L'andamento delle forze risultanti è mediamente decrescente, con una pendenza all'incirca simile a quella della forza propulsiva.
 \item Le forze risultanti, appaiono traslate verso il basso rispetto alla forza propulsiva, con valori che, punto per punto, sono intorno al 50\% di quest'ultima.
 \end{itemize}
 Dalle queste osservazioni quindi, si può dedurre che la differenza verticale, punto per punto, tra $T$ e $R$, rappresenta le forze resistenti di drag aerodinamico e attrito volvente del carrello che diversamente da quanto ipotizzato nel dimensionamento, non sono trascurabili.
@@ -320,7 +321,7 @@ Diagrammando i risultati tuttavia, è facile rendersi conto di come questi siano
 \end{figure}
 
 \noindent
-Si osserva qualitativamente come le due misure siano differenti per un offset pressocché costante. Tale differenza è imputabile a un elevato numero di fattori, come la geometria del tubo di Pitot, l'errore sistematico di misura del sensore, la presenza dello strato limite, gli errori di postazione (ovvero di posizionamento del tubo rispetto al flusso indisturbato) e molti altri, che in generale sono di difficile previsione tramite approccio analitico. Al fine di disporre di dati utilizzabili quindi, va operata una calibrazione di massima del sensore.
+Si osserva qualitativamente come le due misure siano differenti per un offset pressocché costante. Tale differenza è imputabile a un elevato numero di fattori, come la geometria del tubo di Pitot, l'errore sistematico di misura del sensore, la presenza dello strato limite, gli errori di postazione (ovvero di posizionamento rispetto al flusso indisturbato) e molti altri, che in generale sono di difficile previsione tramite approccio analitico. Al fine di disporre di dati utilizzabili quindi, va operata una calibrazione di massima del sensore.
 
 \subsection{Calibrazione del tubo di Pitot}
 In prima approssimazione, si vuole calibrare il tubo di Pitot determinando il valore costante di offset tra i due set di misure.
@@ -342,7 +343,7 @@ Infine il diagramma delle velocità così calibrato è quello riportato:
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=12cm]{img/pitot-calibrato-3}
+	\includegraphics[width=11.5cm]{img/pitot-calibrato-3}
 \end{figure}
 
 \noindent
