@@ -134,7 +134,7 @@ La stazione di terra permette il monitoraggio in tempo reale dei valori misurati
 Il software che è stato scelto per il monitoraggio, la visualizzazione e il plot dei dati in tempo reale, è OpenC3 COSMOS, software gratuito e open-source, inizialmente sviluppato da Ball Aerospace e utilizzato in svariate missioni spaziali incluse GMI, OLI, Kepler, WISE, OMPS, Ares, Orion, e numerosi programmi di difesa \cite{cosmos}. Dato da riportare a proposito di tale software è la sua contro intuitività nella fase di configurazione, che va effettuata scrivendo manualmente file testuali di setup, secondo una documentazione che pur essendo molto ben curata va a trascurare molti particolari non sempre sottintesi. Nonostante questo svantaggio tuttavia, le potenzialità offerte hanno reso comunque conveniente il suo impiego.
 
 \section{Previsione dei punteggi}
-Già dai primi voli di collaudo, al fine di ottenere un resoconto quantitativo sui punteggi che i medesimi voli avrebbero totalizzato se fossero stati eseguiti in gara, si è reso necessario disporre dei dati di posizione. In questa circostanza di urgenza dovuta alle scadenze ravvicinate, si è sfruttata la modularità del sistema, implementando il solo modulo GNSS e momentaneamente rinunciando alla restante sensoristica. Il sistema ha così permesso di registrare i dati di localizzazione del velivolo e di riceverli a terra in diretta. A seguito di ogni volo, per mezzo di un programma appositamente sviluppato in Python, è stato svolto il post-processing dei file di log, per ricavare i dati utili.
+Già dai primi voli di collaudo, al fine di ottenere un resoconto quantitativo sui punteggi che i medesimi voli avrebbero totalizzato se fossero stati eseguiti in gara, si è reso necessario disporre dei dati di posizione. In questa circostanza di urgenza dovuta alle scadenze ravvicinate, si è sfruttata la modularità del sistema, implementando il solo modulo GNSS e momentaneamente rinunciando alla restante sensoristica. Il sistema ha così permesso di registrare i dati di localizzazione del velivolo e di riceverli a terra in diretta. A seguito di ogni volo, per mezzo di un programma appositamente sviluppato in codice Python \footnote{File: \texttt{csv-resolve-scoring.py}}, è stato svolto il post-processing dei file di log, per ricavare i dati utili.
 \\\\
 I tre fattori principali per l'attribuzione del punteggio del singolo volo, come da regolamento \cite{regulation}, sono stati:
 \begin{itemize}
@@ -223,7 +223,7 @@ A seguito della competizione, sono stati resi pubblici i risultati di vari test,
 \end{figure}
 
 \noindent
-A tale fine è stato scritto un codice MATLAB che rappresenta il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
+A tale fine è stato scritto un codice MATLAB \footnote{File: \texttt{potenza\_disponibile.m}} che rappresenta il set di dati sperimentale, in termini di singoli campionamenti e con la rispettiva interpolazione polinomiale (in blu), i dati previsti (in verde) e l'errore relativo tra i due set (in rosso). 
 \\\\
 Si osserva che nonostante l'andamento tra le due curve di potenza sia simile, l'errore relativo nel peggiore dei casi si avvicina al 30\%. Tali risultati rimarcano l'importanza del disporre di un banco di prova delle eliche, per usare nelle future progettazioni preliminari, dati di origine empirica per correggere il modello attuale.
 
@@ -239,9 +239,7 @@ m \cdot \overrightarrow{a} = \overrightarrow{T} + \overrightarrow{D} + \overrigh
 C'è da notare tuttavia, che la relazione precedente per come è scritta è valida solamente durante l'accelerazione orizzontale del velivolo, cioè prima che esso si stacchi da terra, in quanto a tal punto andrebbero considerate anche le componenti verticali di forze e accelerazioni.
 \\\\
 \noindent
-A tal proposito, è stato sviluppato uno script specifico in codice Python. Tale programma in primo luogo richiede di selezionare il file .csv contenente i dati registrati durante uno specifico volo. 
-\\\\
-A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).
+A tal proposito, è stato sviluppato uno specifico in codice Python \footnote{File: \texttt{csv-resolve-takeoff-v2.py}}. Tale programma in primo luogo richiede di selezionare il file .csv contenente i dati registrati durante uno specifico volo. A questo punto risulta necessario isolare la porzione di dati riferita alla sola accelerazione orizzontale del velivolo. Per fare ciò si è optato per un approccio grafico: gli istanti di inizio del decollo e di liftoff possono quindi essere selezionati dall'utente direttamente sul diagramma di velocità e altitudine in funzione del tempo, e vengono evidenziati da due marker verticali (verde e rosso).
 Al fine di validare la selezione, vengono visualizzati gli istanti scelti su un secondo diagramma, rappresentante le accelerazioni sui tre assi in funzione del tempo. In tale diagramma infatti, è possibile individuare l'intervallo di accelerazione orizzontale dall'osservazione qualitativa dei dati, dove appaiono ben distinguibili le vibrazioni dovute allo scorrimento del carrello sul terreno erboso.
 
 \begin{figure}[H]
@@ -322,7 +320,7 @@ Diagrammando i risultati tuttavia, è facile rendersi conto di come questi siano
 \end{figure}
 
 \noindent
-Si osserva qualitativamente come le due misure siano differenti per un offset pressocché costante. Tale differenza è imputabile a un elevato numero di fattori, come la geometria del tubo di Pitot, l'errore sistematico di misura del sensore, gli errori di postazione (ovvero di posizionamento del tubo rispetto al flusso indisturbato) e molti altri, che in generale sono di difficile previsione tramite approccio analitico. Al fine di disporre di dati utilizzabili quindi, va operata una calibrazione di massima del sensore.
+Si osserva qualitativamente come le due misure siano differenti per un offset pressocché costante. Tale differenza è imputabile a un elevato numero di fattori, come la geometria del tubo di Pitot, l'errore sistematico di misura del sensore, la presenza dello strato limite, gli errori di postazione (ovvero di posizionamento del tubo rispetto al flusso indisturbato) e molti altri, che in generale sono di difficile previsione tramite approccio analitico. Al fine di disporre di dati utilizzabili quindi, va operata una calibrazione di massima del sensore.
 
 \subsection{Calibrazione del tubo di Pitot}
 In prima approssimazione, si vuole calibrare il tubo di Pitot determinando il valore costante di offset tra i due set di misure.
@@ -338,7 +336,7 @@ Al fine di isolare il più possibile gli effetti del vento reale, durante il vol
 \end{figure}
 
 \noindent
-Una volta selezionato tale intervallo all'interno del software appositamente creato, quest'ultimo trasla il set di dati di velocità dell'aria verso l'alto di una quantità costante, imponendo che la velocità media coincida con la media della velocità rispetto al suolo (misurata dal modulo GNSS), nello stesso intervallo.
+Una volta selezionato tale intervallo all'interno del software appositamente creato \footnote{File: \texttt{csv-resolve-pitot.py}}, quest'ultimo trasla il set di dati di velocità dell'aria verso l'alto di una quantità costante, imponendo che la sua media coincida con la media della velocità rispetto al suolo (misurata dal modulo GNSS), nello stesso intervallo considerato.
 \\\\
 Infine il diagramma delle velocità così calibrato è quello riportato:
 
@@ -347,9 +345,20 @@ Infine il diagramma delle velocità così calibrato è quello riportato:
 	\includegraphics[width=12cm]{img/pitot-calibrato-3}
 \end{figure}
 
+\noindent
+Si possono osservare alcuni aspetti:
+\begin{itemize}
+\item Il fatto che le due curve abbiano una differenza praticamente costante è un aspetto molto positivo trattandosi di due grandezze fisiche completamente diverse, che conferma la coerenza dei dati. Inoltre con la calibrazione si ottiene un'ottima sovrapposizione delle due linee.
+\item Nella fase di decollo il dato di velocità del flusso ha una brusca decrescenza. Al momento non è stato possibile trovare una spiegazione certa di tale fenomeno, a prima vista controintuitivo. Un'ipotesi tuttavia, potrebbe riguardare il campo di moto generato dall'elica, visto che il tubo di Pitot è stato installato a monte di quest'ultima.
+\end{itemize}
+
+\noindent
+Va notato comunque che quello appena descritto è un processo di calibrazione preliminare e semplificato. Si stanno infatti studiando algoritmi più accurati e complessi che tengono conto del cambio di assetto del velivolo per correggere l'errore di postazione, e l'integrazione di sensori di temperatura e pressione per lo studio della variazione della densità dell'aria con la quota. Allo stesso modo, risulterà importante condurre ulteriori test, installando il tubo di Pitot in zone come il leading edge delle ali, che pur comportando maggiori difficoltà tecniche nell'implementazione permetteranno di ottenere dati meno disturbati.
 \newpage
 \bibliography{refs}
 \bibliographystyle{unsrt}
 
+\noindent
+\textbf{N.B.} Gli script sviluppati per l'elaborazione dei dati, sono disponibili nella repository: \url{https://github.com/emanuele-cason/kowalsky-post-processing}
 
 \end{document}

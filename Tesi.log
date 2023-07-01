@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  1 JUL 2023 14:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  1 JUL 2023 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,12 +476,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--152
  []
 
 [7]
-<img/diagramma-decollo.png, id=146, 2007.5pt x 2257.43375pt>
+<img/diagramma-decollo.png, id=149, 2007.5pt x 2257.43375pt>
 File: img/diagramma-decollo.png Graphic file (type png)
 <use img/diagramma-decollo.png>
 Package pdftex.def Info: img/diagramma-decollo.png  used on input line 155.
 (pdftex.def)             Requested size: 184.9429pt x 207.94821pt.
-<img/screenshot.png, id=147, 2007.5pt x 2257.43375pt>
+<img/screenshot.png, id=150, 2007.5pt x 2257.43375pt>
 File: img/screenshot.png Graphic file (type png)
 <use img/screenshot.png>
 Package pdftex.def Info: img/screenshot.png  used on input line 157.
@@ -497,7 +497,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--168
  []
 
 [8 <./img/diagramma-decollo.png> <./img/screenshot.png>] [9]
-<img/dimensionamento.png, id=165, 1508.9976pt x 377.9721pt>
+<img/dimensionamento.png, id=168, 1508.9976pt x 377.9721pt>
 File: img/dimensionamento.png Graphic file (type png)
 <use img/dimensionamento.png>
 Package pdftex.def Info: img/dimensionamento.png  used on input line 180.
@@ -508,7 +508,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 180--181
  []
 
 [10 <./img/dimensionamento.png>]
-<img/forze.png, id=174, 2344.76pt x 627.34375pt>
+<img/forze.png, id=177, 2344.76pt x 627.34375pt>
 File: img/forze.png Graphic file (type png)
 <use img/forze.png>
 Package pdftex.def Info: img/forze.png  used on input line 193.
@@ -525,7 +525,7 @@ Overfull \hbox (1.6626pt too wide) in paragraph at lines 196--197
 lla forza propul-
  []
 
-<img/dim-vto-v2.png, id=175, 1268.3385pt x 943.1235pt>
+<img/dim-vto-v2.png, id=178, 1268.3385pt x 943.1235pt>
 File: img/dim-vto-v2.png Graphic file (type png)
 <use img/dim-vto-v2.png>
 Package pdftex.def Info: img/dim-vto-v2.png  used on input line 214.
@@ -533,7 +533,7 @@ Package pdftex.def Info: img/dim-vto-v2.png  used on input line 214.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/plot-PA-crop.png, id=177, 586.19pt x 438.63875pt>
+<img/plot-PA-crop.png, id=180, 586.19pt x 438.63875pt>
 File: img/plot-PA-crop.png Graphic file (type png)
 <use img/plot-PA-crop.png>
 Package pdftex.def Info: img/plot-PA-crop.png  used on input line 222.
@@ -558,100 +558,95 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--236
  []
 
 [12 <./img/dim-vto-v2.png>] [13 <./img/plot-PA-crop.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 238--246
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--246
-
- []
-
-<img/select-to-1.png, id=202, 609.27625pt x 416.55624pt>
+<img/select-to-1.png, id=208, 609.27625pt x 416.55624pt>
 File: img/select-to-1.png Graphic file (type png)
 <use img/select-to-1.png>
-Package pdftex.def Info: img/select-to-1.png  used on input line 249.
+Package pdftex.def Info: img/select-to-1.png  used on input line 247.
 (pdftex.def)             Requested size: 284.52756pt x 194.53566pt.
-<img/select-to-2.png, id=203, 609.27625pt x 416.55624pt>
+<img/select-to-2.png, id=209, 609.27625pt x 416.55624pt>
 File: img/select-to-2.png Graphic file (type png)
 <use img/select-to-2.png>
-Package pdftex.def Info: img/select-to-2.png  used on input line 256.
+Package pdftex.def Info: img/select-to-2.png  used on input line 254.
 (pdftex.def)             Requested size: 284.52756pt x 194.53566pt.
 [14 <./img/select-to-1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 261--265
+Underfull \hbox (badness 10000) in paragraph at lines 259--263
 
  []
 
-<img/TvsR-6-4-c.png, id=211, 561.09625pt x 414.54875pt>
+<img/TvsR-6-4-c.png, id=218, 561.09625pt x 414.54875pt>
 File: img/TvsR-6-4-c.png Graphic file (type png)
 <use img/TvsR-6-4-c.png>
-Package pdftex.def Info: img/TvsR-6-4-c.png  used on input line 279.
+Package pdftex.def Info: img/TvsR-6-4-c.png  used on input line 277.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
-<img/TvsR-6-5-c.png, id=212, 561.09625pt x 414.54875pt>
+<img/TvsR-6-5-c.png, id=219, 561.09625pt x 414.54875pt>
 File: img/TvsR-6-5-c.png Graphic file (type png)
 <use img/TvsR-6-5-c.png>
-Package pdftex.def Info: img/TvsR-6-5-c.png  used on input line 280.
+Package pdftex.def Info: img/TvsR-6-5-c.png  used on input line 278.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
 [15 <./img/select-to-2.png>]
-<img/TvsR-7-2-c.png, id=220, 561.09625pt x 414.54875pt>
+<img/TvsR-7-2-c.png, id=227, 561.09625pt x 414.54875pt>
 File: img/TvsR-7-2-c.png Graphic file (type png)
 <use img/TvsR-7-2-c.png>
-Package pdftex.def Info: img/TvsR-7-2-c.png  used on input line 286.
+Package pdftex.def Info: img/TvsR-7-2-c.png  used on input line 284.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
-<img/TvsR-7-3-c.png, id=221, 561.09625pt x 414.54875pt>
+<img/TvsR-7-3-c.png, id=228, 561.09625pt x 414.54875pt>
 File: img/TvsR-7-3-c.png Graphic file (type png)
 <use img/TvsR-7-3-c.png>
-Package pdftex.def Info: img/TvsR-7-3-c.png  used on input line 287.
+Package pdftex.def Info: img/TvsR-7-3-c.png  used on input line 285.
 (pdftex.def)             Requested size: 184.9429pt x 136.63704pt.
  [16 <./img/TvsR-6-4-c.png> <./img/TvsR-6-5-c.png> <./img/TvsR-7-2-c.png> <./im
 g/TvsR-7-3-c.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 299--302
+Underfull \hbox (badness 10000) in paragraph at lines 297--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--307
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
+Underfull \hbox (badness 10000) in paragraph at lines 310--314
 
  []
 
-<img/pitot-offset-3.png, id=237, 589.20125pt x 416.55624pt>
+<img/pitot-offset-3.png, id=244, 589.20125pt x 416.55624pt>
 File: img/pitot-offset-3.png Graphic file (type png)
 <use img/pitot-offset-3.png>
-Package pdftex.def Info: img/pitot-offset-3.png  used on input line 319.
+Package pdftex.def Info: img/pitot-offset-3.png  used on input line 317.
 (pdftex.def)             Requested size: 341.43306pt x 241.38667pt.
 [18 <./img/pitot-offset-3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 328--331
+Underfull \hbox (badness 10000) in paragraph at lines 326--329
 
  []
 
-<img/traiettoria-3.png, id=247, 548.0475pt x 548.0475pt>
+<img/traiettoria-3.png, id=254, 548.0475pt x 548.0475pt>
 File: img/traiettoria-3.png Graphic file (type png)
 <use img/traiettoria-3.png>
-Package pdftex.def Info: img/traiettoria-3.png  used on input line 334.
+Package pdftex.def Info: img/traiettoria-3.png  used on input line 332.
 (pdftex.def)             Requested size: 184.9429pt x 184.9455pt.
-<img/traiettoria-isolata-3.png, id=248, 548.0475pt x 548.0475pt>
+<img/traiettoria-isolata-3.png, id=255, 548.0475pt x 548.0475pt>
 File: img/traiettoria-isolata-3.png Graphic file (type png)
 <use img/traiettoria-isolata-3.png>
-Package pdftex.def Info: img/traiettoria-isolata-3.png  used on input line 335.
+Package pdftex.def Info: img/traiettoria-isolata-3.png  used on input line 333.
 
 (pdftex.def)             Requested size: 184.9429pt x 184.9455pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--344
+Underfull \hbox (badness 10000) in paragraph at lines 338--342
 
  []
 
-<img/pitot-calibrato-3.png, id=249, 593.21625pt x 416.55624pt>
+[19 <./img/traiettoria-3.png> <./img/traiettoria-isolata-3.png>]
+<img/pitot-calibrato-3.png, id=265, 593.21625pt x 416.55624pt>
 File: img/pitot-calibrato-3.png Graphic file (type png)
 <use img/pitot-calibrato-3.png>
-Package pdftex.def Info: img/pitot-calibrato-3.png  used on input line 347.
+Package pdftex.def Info: img/pitot-calibrato-3.png  used on input line 345.
 (pdftex.def)             Requested size: 341.43306pt x 239.7595pt.
-[19 <./img/traiettoria-3.png> <./img/traiettoria-isolata-3.png>] [20 <./img/pit
-ot-calibrato-3.png>] (Tesi.bbl
+ [20 <./img/pitot-calibrato-3.png>] [21] (Tesi.bbl
 Underfull \hbox (badness 2435) in paragraph at lines 7--9
 []\OT1/cmr/m/n/12 Ltd. Chengdu Ebyte Elec-tronic Tech-nol-ogy Co.  \OT1/cmr/m/i
 t/12 E01-ML01DP5
@@ -663,16 +658,22 @@ Underfull \hbox (badness 1448) in paragraph at lines 11--14
 d, Open-Source,
  []
 
-) [21] (Tesi.aux)
+)
+Overfull \hbox (29.11761pt too wide) in paragraph at lines 361--363
+\OT1/cmr/m/n/12 repos-i-tory: [][]$\OT1/cmtt/m/n/12 https : / / github . com / 
+emanuele-[]cason / kowalsky-[]post-[]processing$[][] 
+ []
+
+[22] (Tesi.aux)
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
 (rerunfilecheck)             Checksum: 31D9E637491B6E8B8FC3071EC4BE5C12;3294.
  ) 
 Here is how much of TeX's memory you used:
- 10924 strings out of 476315
- 179474 string characters out of 5785781
+ 10935 strings out of 476315
+ 179594 string characters out of 5785781
  1859068 words of memory out of 5000000
- 31167 multiletter control sequences out of 15000+600000
- 520209 words of font info for 59 fonts, out of 8000000 for 9000
+ 31171 multiletter control sequences out of 15000+600000
+ 520546 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,17n,76p,1004b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Emanuele\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\t
@@ -691,10 +692,12 @@ KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Emanuele/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Emanuele/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/E
 manuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb
->
-Output written on Tesi.pdf (22 pages, 9791296 bytes).
+><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmtt10.pfb><C:/Users/Emanuele/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmtt12.pfb>
+Output written on Tesi.pdf (23 pages, 9818006 bytes).
 PDF statistics:
- 345 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 368 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
